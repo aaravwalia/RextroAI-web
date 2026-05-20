@@ -1,0 +1,6 @@
+{
+  "name": "Rextro AI",
+  "description": "Premium full-stack Restaurant Management and POS Dashboard.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
