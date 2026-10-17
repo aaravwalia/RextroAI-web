@@ -3,11 +3,306 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Google AI Studio App</title>
+    <title>Rextro Cafe — billing, stock and profit for a small cafe</title>
+    <meta name="description" content="Billing, stock, staff purchases and real profit for a small cafe, on the phone your staff already has. No machine, no installation. First month free." />
+    <meta property="og:title" content="Rextro Cafe — your whole cafe, in one phone" />
+    <meta property="og:description" content="Billing, stock, staff purchases and real profit. Runs on the phone your staff already has." />
+    <meta property="og:image" content="/shots/billing.jpg" />
+    <meta property="og:type" content="website" />
+    <meta name="theme-color" content="#0a0a0c" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%232563eb'/%3E%3Ctext x='32' y='45' font-family='Segoe UI,Arial' font-size='40' font-weight='800' fill='white' text-anchor='middle'%3ER%3C/text%3E%3C/svg%3E" />
+    <link rel="preload" as="image" href="/shots/billing.jpg" />
+    <style>
+      :root {
+        --ink: #0a0a0c;
+        --card: #141418;
+        --line: #26262e;
+        --text: #f4f4f6;
+        --muted: #9a9aa6;
+        --blue: #2563eb;
+        --orange: #ff7a18;
+        --green: #22c55e;
+      }
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+      html { scroll-behavior: smooth; }
+      body {
+        background: var(--ink);
+        color: var(--text);
+        font-family: "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+        line-height: 1.55;
+        -webkit-font-smoothing: antialiased;
+      }
+      .wrap { width: 100%; max-width: 1120px; margin: 0 auto; padding: 0 20px; }
+      a { color: inherit; }
+
+      header {
+        position: sticky; top: 0; z-index: 20;
+        background: rgba(10,10,12,.88); backdrop-filter: blur(10px);
+        border-bottom: 1px solid var(--line);
+      }
+      .bar { display: flex; align-items: center; gap: 12px; height: 62px; }
+      .mark {
+        width: 34px; height: 34px; border-radius: 9px; background: var(--blue);
+        display: grid; place-items: center; font-weight: 800; font-size: 19px;
+      }
+      .brand { font-weight: 800; letter-spacing: -.2px; }
+      .brand span { color: var(--muted); font-weight: 600; }
+      .bar .spacer { flex: 1; }
+      .nav { display: none; gap: 22px; margin-left: 26px; }
+      .nav a { color: var(--muted); text-decoration: none; font-size: 15px; font-weight: 600; }
+      .nav a:hover { color: var(--text); }
+      .btn {
+        display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+        padding: 12px 20px; border-radius: 999px; font-weight: 700; font-size: 15px;
+        text-decoration: none; border: 1px solid transparent; white-space: nowrap;
+      }
+      .btn-wa { background: var(--green); color: #04210f; }
+      .btn-ghost { border-color: var(--line); color: var(--text); }
+      .btn-sm { padding: 9px 16px; font-size: 14px; }
+
+      .hero { padding: 64px 0 40px; }
+      .hero-grid { display: grid; gap: 40px; align-items: center; }
+      h1 { font-size: clamp(34px, 7vw, 60px); line-height: 1.05; letter-spacing: -1.4px; font-weight: 800; }
+      .lede { color: var(--muted); font-size: clamp(17px, 2.4vw, 21px); margin-top: 18px; max-width: 34ch; }
+      .cta-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+      .hero-note { margin-top: 16px; color: var(--muted); font-size: 14px; }
+      .phone {
+        width: min(300px, 78vw); margin: 0 auto; border-radius: 26px; overflow: hidden;
+        border: 1px solid var(--line); background: #000; box-shadow: 0 30px 80px rgba(0,0,0,.6);
+      }
+      .phone video, .phone img { display: block; width: 100%; height: auto; }
+
+      section { padding: 56px 0; border-top: 1px solid var(--line); scroll-margin-top: 70px; }
+      body { padding-bottom: 76px; }
+      h2 { font-size: clamp(26px, 4.4vw, 38px); letter-spacing: -.8px; font-weight: 800; }
+      .sub { color: var(--muted); margin-top: 10px; max-width: 58ch; }
+
+      .feature { display: grid; gap: 26px; align-items: center; margin-top: 38px; }
+      .feature img { width: min(260px, 70vw); border-radius: 18px; border: 1px solid var(--line); display: block; }
+      .feature h3 { font-size: 22px; font-weight: 800; }
+      .feature p { color: var(--muted); margin-top: 8px; }
+      .tag {
+        display: inline-block; font-size: 12px; font-weight: 800; letter-spacing: .12em;
+        text-transform: uppercase; color: var(--orange); margin-bottom: 8px;
+      }
+
+      .grid { display: grid; gap: 14px; margin-top: 30px; }
+      .card { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 20px; }
+      .card h4 { font-size: 17px; font-weight: 700; }
+      .card p { color: var(--muted); font-size: 15px; margin-top: 6px; }
+
+      .price { display: grid; gap: 14px; margin-top: 30px; }
+      .plan { background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 24px; }
+      .plan.hot { border-color: var(--orange); }
+      .plan .amt { font-size: 34px; font-weight: 800; letter-spacing: -1px; }
+      .plan .amt small { font-size: 15px; color: var(--muted); font-weight: 600; }
+      .plan ul { list-style: none; margin-top: 14px; display: grid; gap: 8px; }
+      .plan li { color: var(--muted); font-size: 15px; padding-left: 22px; position: relative; }
+      .plan li::before { content: "✓"; position: absolute; left: 0; color: var(--green); font-weight: 800; }
+      .free {
+        margin-top: 22px; background: rgba(255,122,24,.08); border: 1px solid rgba(255,122,24,.45);
+        border-radius: 16px; padding: 20px;
+      }
+      .free b { color: var(--orange); }
+
+      .honest li { color: var(--muted); font-size: 16px; padding: 14px 0; border-bottom: 1px solid var(--line); list-style: none; }
+      .honest b { color: var(--text); }
+      .honest li:last-child { border-bottom: 0; }
+
+      .faq { margin-top: 24px; }
+      details { border-bottom: 1px solid var(--line); padding: 16px 0; }
+      summary { cursor: pointer; font-weight: 700; font-size: 17px; list-style: none; }
+      summary::-webkit-details-marker { display: none; }
+      summary::after { content: "+"; float: right; color: var(--muted); font-weight: 400; }
+      details[open] summary::after { content: "–"; }
+      details p { color: var(--muted); margin-top: 10px; font-size: 15px; }
+
+      .end { text-align: center; padding: 70px 0 40px; }
+      .end h2 { max-width: 20ch; margin: 0 auto; }
+      footer { border-top: 1px solid var(--line); padding: 26px 0 60px; color: var(--muted); font-size: 14px; }
+      .foot { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+
+      .mobile-bar {
+        position: fixed; left: 0; right: 0; bottom: 0; z-index: 30;
+        padding: 10px 16px calc(10px + env(safe-area-inset-bottom));
+        background: rgba(10,10,12,.94); backdrop-filter: blur(10px);
+        border-top: 1px solid var(--line);
+      }
+      .mobile-bar .btn { width: 100%; }
+
+      @media (max-width: 479px) {
+        .brand span { display: none; }
+        header .btn-ghost { display: none; }
+        .bar { gap: 10px; }
+      }
+
+      @media (min-width: 860px) {
+        body { padding-bottom: 0; }
+        .mobile-bar { display: none; }
+        .nav { display: flex; }
+        .hero { padding: 96px 0 68px; }
+        .hero-grid { grid-template-columns: 1fr 420px; gap: 60px; }
+        .lede { font-size: 21px; }
+        .phone { width: 380px; }
+        .feature { grid-template-columns: 330px 1fr; gap: 52px; }
+        .feature.flip { grid-template-columns: 1fr 330px; }
+        .feature img { width: 330px; }
+        .feature.flip .shot { order: 2; }
+        .grid { grid-template-columns: repeat(3, 1fr); }
+        .price { grid-template-columns: repeat(3, 1fr); align-items: start; }
+      }
+    </style>
   </head>
   <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+    <header>
+      <div class="wrap bar">
+        <div class="mark">R</div>
+        <div class="brand">Rextro Cafe <span>by Rextro AI</span></div>
+        <nav class="nav">
+          <a href="#features">Features</a>
+          <a href="#price">Price</a>
+          <a href="#faq">Questions</a>
+        </nav>
+        <div class="spacer"></div>
+        <a class="btn btn-ghost btn-sm" href="/demo">Product tour</a>
+        <a class="btn btn-wa btn-sm" href="https://wa.me/918988159401?text=Hi%2C%20I%20want%20to%20know%20more%20about%20Rextro%20Cafe." target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+    </header>
+
+    <main>
+      <div class="wrap hero">
+        <div class="hero-grid">
+          <div>
+            <h1>Your whole cafe, in one phone</h1>
+            <p class="lede">Billing, stock, what your staff spends, and the profit that is actually left.</p>
+            <div class="cta-row">
+              <a class="btn btn-wa" href="https://wa.me/918988159401?text=Hi%2C%20I%20want%20to%20know%20more%20about%20Rextro%20Cafe." target="_blank" rel="noopener">Message me on WhatsApp</a>
+              <a class="btn btn-ghost" href="/demo">See the product tour</a>
+            </div>
+            <p class="hero-note">No machine to buy. Nothing to install. First month free, set up by me.</p>
+          </div>
+          <div class="phone">
+            <video src="/demo-purchase.mp4" poster="/demo-poster.jpg" autoplay muted loop playsinline preload="metadata"></video>
+          </div>
+        </div>
+      </div>
+
+      <section id="features">
+        <div class="wrap">
+          <h2>What it does</h2>
+          <p class="sub">Every screen below is the real app.</p>
+
+          <div class="feature">
+            <div class="shot"><img src="/shots/billing.jpg" alt="The point of sale screen with running orders" loading="lazy" width="480" height="853" /></div>
+            <div>
+              <span class="tag">Billing</span>
+              <h3>Bills in eight seconds</h3>
+              <p>Staff tap the photo of the dish. A table that keeps ordering stays one running order with its own number, and settles as a single bill.</p>
+            </div>
+          </div>
+
+          <div class="feature flip">
+            <div class="shot"><img src="/shots/purchase.jpg" alt="A worker sending a photo of a purchase bill" loading="lazy" width="480" height="853" /></div>
+            <div>
+              <span class="tag">Staff purchases</span>
+              <h3>You approve what staff spend</h3>
+              <p>The worker photographs the bill and types the amount. Nothing counts as spent until you approve it, and the photo is deleted when you do.</p>
+            </div>
+          </div>
+
+          <div class="feature">
+            <div class="shot"><img src="/shots/stock.jpg" alt="The inventory screen showing stock levels" loading="lazy" width="480" height="853" /></div>
+            <div>
+              <span class="tag">Stock</span>
+              <h3>Stock counts itself down</h3>
+              <p>Tell it what each dish uses, once. After that every cold coffee takes the milk out on its own.</p>
+            </div>
+          </div>
+
+          <div class="feature flip">
+            <div class="shot"><img src="/shots/profit.jpg" alt="The profit and loss screen" loading="lazy" width="480" height="853" /></div>
+            <div>
+              <span class="tag">Profit</span>
+              <h3>What you kept, not what you sold</h3>
+              <p>Sales, minus ingredients, minus a day's share of rent and salaries. For today, this week or this month.</p>
+            </div>
+          </div>
+
+          <div class="grid" style="margin-top:34px">
+            <div class="card"><h4>Staff can't delete orders</h4><p>Every order is logged. Only you can remove one.</p></div>
+            <div class="card"><h4>Attendance and regulars</h4><p>Staff clock in on their phone. Customers get their discount automatically.</p></div>
+            <div class="card"><h4>Two separate logins</h4><p>You sign in with Google. Staff use a PIN and never see your money screens.</p></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="price">
+        <div class="wrap">
+          <h2>What it costs</h2>
+          <div class="price">
+            <div class="plan">
+              <div class="amt">₹499 <small>/ month</small></div>
+              <ul>
+                <li>Billing with your menu and photos</li>
+                <li>Running orders and staff PIN login</li>
+                <li>Staff purchases with your approval</li>
+              </ul>
+            </div>
+            <div class="plan hot">
+              <div class="amt">₹999 <small>/ month</small></div>
+              <ul>
+                <li>Everything above</li>
+                <li>Stock that deducts on every sale</li>
+                <li>Profit &amp; Loss, customers, reports</li>
+              </ul>
+            </div>
+            <div class="plan">
+              <div class="amt">Yearly <small>2 months free</small></div>
+              <ul>
+                <li>Same app, paid once a year</li>
+                <li>Setup and WhatsApp support included</li>
+              </ul>
+            </div>
+          </div>
+          <div class="free">
+            <p><b>First month free, and I set it up.</b> Send me your menu, I come to your shop and put in your items, prices, dish photos and staff PIN. About twenty minutes, and your staff bills one real order while I'm there.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="faq">
+        <div class="wrap">
+          <h2>Before you ask</h2>
+          <ul class="honest" style="margin-top:16px">
+            <li><b>Do I need a billing machine?</b> No — it opens in the browser on the phone you already have.</li>
+            <li><b>Will my staff see my profit?</b> No. Staff get the billing screen only, and that is enforced in the database.</li>
+            <li><b>What about the internet?</b> Short drops are fine. A shop with no network all day is not a good fit.</li>
+            <li><b>What it does not do:</b> no GST e-invoicing, no thermal or KOT printer, no Zomato or Swiggy, one shop per login.</li>
+          </ul>
+        </div>
+      </section>
+
+      <div class="wrap end">
+        <h2>Try it on your own menu</h2>
+        <p class="sub" style="margin:14px auto 0">Tell me what your shop sells. First month free.</p>
+        <div class="cta-row" style="justify-content:center">
+          <a class="btn btn-wa" href="https://wa.me/918988159401?text=Hi%2C%20I%20want%20to%20know%20more%20about%20Rextro%20Cafe." target="_blank" rel="noopener">WhatsApp 89881 59401</a>
+          <a class="btn btn-ghost" href="/demo">Product tour</a>
+        </div>
+      </div>
+    </main>
+
+    <div class="mobile-bar">
+      <a class="btn btn-wa" href="https://wa.me/918988159401?text=Hi%2C%20I%20want%20to%20know%20more%20about%20Rextro%20Cafe." target="_blank" rel="noopener">WhatsApp 89881 59401</a>
+    </div>
+
+    <footer>
+      <div class="wrap foot">
+        <div class="mark" style="width:28px;height:28px;font-size:16px">R</div>
+        <div>Rextro Cafe — built by Rextro AI</div>
+        <div class="spacer" style="flex:1"></div>
+        <div>WhatsApp 89881 59401</div>
+      </div>
+    </footer>
   </body>
 </html>
-
