@@ -10,6 +10,7 @@
     <meta property="og:image" content="/shots/billing.jpg" />
     <meta property="og:type" content="website" />
     <meta name="theme-color" content="#0a0a0c" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%232563eb'/%3E%3Ctext x='32' y='45' font-family='Segoe UI,Arial' font-size='40' font-weight='800' fill='white' text-anchor='middle'%3ER%3C/text%3E%3C/svg%3E" />
     <link rel="preload" as="image" href="/shots/billing.jpg" />
     <style>
       :root {
@@ -47,6 +48,9 @@
       .brand { font-weight: 800; letter-spacing: -.2px; }
       .brand span { color: var(--muted); font-weight: 600; }
       .bar .spacer { flex: 1; }
+      .nav { display: none; gap: 22px; margin-left: 26px; }
+      .nav a { color: var(--muted); text-decoration: none; font-size: 15px; font-weight: 600; }
+      .nav a:hover { color: var(--text); }
       .btn {
         display: inline-flex; align-items: center; justify-content: center; gap: 8px;
         padding: 12px 20px; border-radius: 999px; font-weight: 700; font-size: 15px;
@@ -68,7 +72,8 @@
       }
       .phone video, .phone img { display: block; width: 100%; height: auto; }
 
-      section { padding: 56px 0; border-top: 1px solid var(--line); }
+      section { padding: 56px 0; border-top: 1px solid var(--line); scroll-margin-top: 70px; }
+      body { padding-bottom: 76px; }
       h2 { font-size: clamp(26px, 4.4vw, 38px); letter-spacing: -.8px; font-weight: 800; }
       .sub { color: var(--muted); margin-top: 10px; max-width: 58ch; }
 
@@ -116,6 +121,14 @@
       footer { border-top: 1px solid var(--line); padding: 26px 0 60px; color: var(--muted); font-size: 14px; }
       .foot { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
 
+      .mobile-bar {
+        position: fixed; left: 0; right: 0; bottom: 0; z-index: 30;
+        padding: 10px 16px calc(10px + env(safe-area-inset-bottom));
+        background: rgba(10,10,12,.94); backdrop-filter: blur(10px);
+        border-top: 1px solid var(--line);
+      }
+      .mobile-bar .btn { width: 100%; }
+
       @media (max-width: 479px) {
         .brand span { display: none; }
         header .btn-ghost { display: none; }
@@ -123,11 +136,16 @@
       }
 
       @media (min-width: 860px) {
-        .hero { padding: 90px 0 60px; }
-        .hero-grid { grid-template-columns: 1.05fr .95fr; gap: 56px; }
+        body { padding-bottom: 0; }
+        .mobile-bar { display: none; }
+        .nav { display: flex; }
+        .hero { padding: 96px 0 68px; }
+        .hero-grid { grid-template-columns: 1fr 420px; gap: 60px; }
         .lede { font-size: 21px; }
-        .feature { grid-template-columns: 300px 1fr; gap: 44px; }
-        .feature.flip { grid-template-columns: 1fr 300px; }
+        .phone { width: 380px; }
+        .feature { grid-template-columns: 330px 1fr; gap: 52px; }
+        .feature.flip { grid-template-columns: 1fr 330px; }
+        .feature img { width: 330px; }
         .feature.flip .shot { order: 2; }
         .grid { grid-template-columns: repeat(3, 1fr); }
         .price { grid-template-columns: repeat(3, 1fr); align-items: start; }
@@ -139,6 +157,11 @@
       <div class="wrap bar">
         <div class="mark">R</div>
         <div class="brand">Rextro Cafe <span>by Rextro AI</span></div>
+        <nav class="nav">
+          <a href="#features">Features</a>
+          <a href="#price">Price</a>
+          <a href="#faq">Questions</a>
+        </nav>
         <div class="spacer"></div>
         <a class="btn btn-ghost btn-sm" href="/demo">Product tour</a>
         <a class="btn btn-wa btn-sm" href="https://wa.me/918988159401?text=Hi%2C%20I%20want%20to%20know%20more%20about%20Rextro%20Cafe." target="_blank" rel="noopener">WhatsApp</a>
@@ -220,6 +243,18 @@
         </div>
       </section>
 
+      <section id="setup">
+        <div class="wrap">
+          <h2>Set up in twenty minutes</h2>
+          <p class="sub">You don't type anything in. I do it, in your shop, on your menu.</p>
+          <div class="grid">
+            <div class="card"><h4>1. Send me your menu</h4><p>A photo of your menu or price list is enough. I put every item in with its price and category.</p></div>
+            <div class="card"><h4>2. I set it up in the shop</h4><p>Your dish photos, your staff PIN, your raw materials and your monthly costs. About twenty minutes.</p></div>
+            <div class="card"><h4>3. Your staff bills one order</h4><p>While I'm standing there. If anything feels awkward, I change it before I leave.</p></div>
+          </div>
+        </div>
+      </section>
+
       <section id="price">
         <div class="wrap">
           <h2>What it costs</h2>
@@ -273,7 +308,7 @@
         </div>
       </section>
 
-      <section>
+      <section id="faq">
         <div class="wrap">
           <h2>Questions people ask</h2>
           <div class="faq">
@@ -310,6 +345,10 @@
         </div>
       </div>
     </main>
+
+    <div class="mobile-bar">
+      <a class="btn btn-wa" href="https://wa.me/918988159401?text=Hi%2C%20I%20want%20to%20know%20more%20about%20Rextro%20Cafe." target="_blank" rel="noopener">WhatsApp 89881 59401</a>
+    </div>
 
     <footer>
       <div class="wrap foot">
