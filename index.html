@@ -20,7 +20,7 @@
 :root{
   --bg:#f7f9fa; --surface:#ecf0f2; --ink:#1f3038; --muted:#5d6b72;
   --accent:#0d7480; --accent-ink:#ffffff;
-  --field-a:#e3e9eb; --field-b:#d6dee1; --field-c:#c7d2d6; --field-d:#b6c4c9;
+  --field-a:#f7f9fa; --field-b:#e4eaec; --field-c:#1f3038; --field-d:#0d7480;
   --step-small:0.875rem;
   --step-body:clamp(1.0625rem,1rem + 0.25vw,1.1875rem);
   --step-lead:clamp(1.25rem,1.1rem + 0.7vw,1.625rem);
@@ -32,7 +32,7 @@
 }
 @media (min-width:900px){ :root{ --gutter:56px; } }
 *{box-sizing:border-box}
-html{scroll-behavior:smooth;scrollbar-gutter:stable}
+html{scroll-behavior:smooth}
 body{margin:0;background:var(--bg);color:var(--ink);
   font-family:"Source Serif 4",Georgia,serif;font-size:var(--step-body);line-height:1.55;
   -webkit-font-smoothing:antialiased}
@@ -76,8 +76,8 @@ a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible{o
 
 /* ---- hero: controls on the sentence ---- */
 .hero{padding:clamp(48px,8vh,104px) 0 clamp(56px,9vh,112px);position:relative}
-.hero-inner{position:relative;text-align:center}
-.hero h1{font-size:var(--step-display);line-height:1.0;margin:0 auto;font-feature-settings:'tnum'}
+.hero-inner{position:relative}
+.hero h1{font-size:var(--step-display);line-height:1.0;font-feature-settings:'tnum'}
 .hero h1 b,.hero h1 span{font-family:"Libre Franklin",Helvetica,Arial,sans-serif}
 .hero h1 .ln{display:block;overflow:hidden}
 .hero h1 .ln b{display:block;font-weight:inherit;transform:translateY(105%);
@@ -85,26 +85,22 @@ a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible{o
 .hero h1 .ln:nth-child(2) b{animation-delay:.11s}
 @keyframes riseline{to{transform:translateY(0)}}
 #sum{font-variant-numeric:tabular-nums}
-.hero .under{margin:34px auto 0;max-width:40ch;font-size:var(--step-lead);color:var(--ink)}
-.hero .act{margin-top:30px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
-.chips{display:grid;gap:12px;margin:40px auto 0;max-width:760px}
+.hero .under{margin:32px 0 0;max-width:38ch;font-size:var(--step-lead);color:var(--ink)}
+.hero .act{margin-top:32px;display:flex;gap:22px;align-items:center;flex-wrap:wrap}
+.chips{display:grid;gap:12px;margin:46px 0 0}
 @media (min-width:900px){
   .hero-inner{padding-bottom:12px}
-  .chips{grid-template-columns:repeat(3,1fr);gap:16px;max-width:980px}
+  .chips{grid-template-columns:repeat(3,1fr);gap:16px}
 }
 
 /* a real control from the product; data-ui keeps its own conventions */
 .chip{background:var(--surface);border:1px solid #cfd8db;border-radius:6px;padding:12px 16px 14px;text-align:left;
-  transition:transform .16s var(--ease)}
-.chip:hover,.chip:focus-within{transform:translateY(-3px)}
+  transition:border-color .16s var(--ease)}
+.chip:hover,.chip:focus-within{border-color:var(--accent)}
 .chip label{display:flex;justify-content:space-between;align-items:baseline;gap:10px;
   font-family:"Libre Franklin",sans-serif;font-weight:700;font-size:.8125rem;letter-spacing:0;color:var(--muted)}
 .chip label b{font-size:var(--step-body);color:var(--ink);font-variant-numeric:tabular-nums}
 .chip input[type=range]{width:100%;margin:10px 0 0;accent-color:var(--accent);height:22px}
-@media (min-width:900px){
-  .chip{transform:rotate(-2deg)} .chip:nth-child(2){transform:rotate(1.5deg)} .chip:nth-child(3){transform:rotate(-1deg)}
-}
-
 /* ---- sections ---- */
 section{padding:clamp(80px,13vh,150px) 0}
 .sec-head{font-size:var(--step-head);max-width:16ch}
@@ -114,9 +110,8 @@ section{padding:clamp(80px,13vh,150px) 0}
 .fields{display:grid;grid-template-columns:1fr}
 .field{padding:40px var(--gutter) 44px;display:flex;flex-direction:column;min-height:62svh}
 .field:nth-child(1){background:var(--field-a)} .field:nth-child(2){background:var(--field-b)}
-.field:nth-child(3){background:var(--field-c)} .field:nth-child(4){background:var(--field-d)}
-.field .card{margin:clamp(20px,7%,56px) 0 0;transition:transform .15s var(--ease)}
-.field:hover .card{transform:translateY(-6px)}
+.field:nth-child(3){background:var(--field-c);color:#fff} .field:nth-child(4){background:var(--field-d);color:#fff}
+.field .card{margin:clamp(20px,7%,56px) 0 0}
 .field .clause{font-size:clamp(1.375rem,2vw,2rem);font-family:"Libre Franklin",sans-serif;font-weight:700;
   letter-spacing:-.03em;line-height:1.06;margin-top:auto;padding-top:32px;max-width:15ch}
 .fieldhead{font-size:clamp(1.5rem,2.2vw,2.125rem);letter-spacing:-.035em;line-height:1.04;max-width:13ch}
@@ -136,7 +131,7 @@ section{padding:clamp(80px,13vh,150px) 0}
 [data-ui]{font-family:"Libre Franklin",Helvetica,Arial,sans-serif;color:#13232b}
 .ocard{width:100%;max-width:280px;background:#fff;border:1px solid #d3dbde;border-radius:6px;padding:14px 16px 16px;font-size:var(--ui)}
 .ocard .top{display:flex;align-items:center;gap:8px;margin-bottom:8px}
-.ocard .tbl{background:#f0b429;color:#2a2102;font-weight:700;border-radius:4px;padding:2px 8px;font-size:12px}
+.ocard .tbl{background:#f0b429;color:#2a2102;font-weight:700;border-radius:4px;padding:2px 8px;font-size:13px}
 .ocard .when{color:#4a5a62;font-size:13px;margin-left:auto}
 .ocard .line{display:flex;justify-content:space-between;padding:3px 0;font-weight:600}
 .ocard .tot{display:flex;justify-content:space-between;margin-top:10px;padding-top:9px;border-top:1px solid #e2e8ea;font-weight:700;font-size:15px} /* taste-skill-ignore: inside data-ui */
@@ -170,9 +165,7 @@ section{padding:clamp(80px,13vh,150px) 0}
 
 .screens{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:38px}
 .shot{margin:0}
-.shot img{width:100%;height:auto;border-radius:var(--radius);background:var(--surface);
-  transition:transform .3s var(--ease)}
-.shot:hover img{transform:scale(1.015)}
+.shot img{width:100%;height:auto;border-radius:var(--radius);background:var(--surface)}
 .shot figcaption{margin-top:10px;font-size:var(--step-small);color:var(--muted);max-width:40ch}
 @media (min-width:700px){ .screens{grid-template-columns:repeat(3,1fr)} }
 @media (min-width:1000px){ .screens{grid-template-columns:repeat(5,1fr);gap:18px} }
@@ -180,9 +173,7 @@ section{padding:clamp(80px,13vh,150px) 0}
 .film video{width:100%;max-width:300px;height:auto;border-radius:var(--radius);background:var(--surface);display:block}
 @media (min-width:900px){ .film{grid-template-columns:auto 1fr;gap:56px} .film video{max-width:340px} }
 .band{margin:0;padding:0}
-.band img{width:100%;height:clamp(300px,52svh,620px);object-fit:cover;
-  transition:transform 1.1s var(--ease)}
-.band:hover img{transform:scale(1.02)}
+.band img{width:100%;height:clamp(300px,52svh,620px);object-fit:cover}
 .band figcaption{max-width:1320px;margin:14px auto 0;padding:0 var(--gutter);font-size:var(--step-small);color:var(--muted)}
 
 /* about: founder's letter */
@@ -192,10 +183,9 @@ section{padding:clamp(80px,13vh,150px) 0}
 .letter p{margin-top:22px;font-size:var(--step-body);line-height:1.6}
 .letter .mark-it{background:#cfe6e8;padding:0 4px}
 .letter .sign{margin-top:30px;font-style:italic;font-size:var(--step-lead)}
-.letter .role{font-size:var(--step-small);color:var(--muted);font-style:normal;margin-top:4px}
+.letter .role{display:block;font-size:var(--step-small);color:var(--muted);font-style:normal;margin-top:6px}
 .letter-pic{margin-top:54px}
-.letter-pic img{width:100%;height:auto;border-radius:var(--radius);transition:transform .4s var(--ease)}
-.letter-pic:hover img{transform:scale(1.012)}
+.letter-pic img{width:100%;height:auto;border-radius:var(--radius)}
 .letter-pic figcaption{margin-top:10px;font-size:var(--step-small);color:var(--muted)}
 
 /* features: staggered fragment cells */
@@ -219,15 +209,14 @@ section{padding:clamp(80px,13vh,150px) 0}
   border-bottom:0;border-right:0;padding:14px 16px;font-size:var(--ui)}
 .cell.flip .fragbox{border-top-left-radius:0;border-top-right-radius:6px;border-left:0;border-right:1px solid #d3dbde} /* taste-skill-ignore: inside data-ui */
 .fragbox .row{display:flex;justify-content:space-between;gap:12px;padding:5px 0;font-weight:600}
-.fragbox .row span.d{color:#b3261e}
 .fragbox .row span.u{color:#0d7480}
 .fragbox .hd{font-size:13px;color:#4a5a62;font-weight:700;margin-bottom:8px}
-.pins{display:flex;gap:8px;flex-wrap:wrap}
-.pin{border:1px solid #d3dbde;border-radius:4px;padding:8px 11px;font-size:var(--ui);font-weight:700;background:#fff}
-.pin.on{background:#0d7480;color:#fff;border-color:#0d7480}
+.fragshot{width:100%;height:auto;display:block;border-top-left-radius:6px}
+.cell.flip .fragshot{border-top-left-radius:0;border-top-right-radius:6px}
+.cell:nth-child(6) .fragshot{max-width:300px;border-radius:6px}
 .stamps{display:flex;gap:6px;flex-wrap:wrap}
 .stamps i{width:26px;height:26px;border-radius:50%;display:grid;place-items:center;font-style:normal;
-  font-size:12px;font-weight:700;border:2px solid #c6d1d4;color:#9aa8ad}
+  font-size:13px;font-weight:700;border:2px solid #c6d1d4;color:#9aa8ad}
 .stamps i.f{background:#0d7480;border-color:#0d7480;color:#fff}
 .stamps i.f::after{content:'';width:9px;height:9px;border-radius:50%;background:#fff}
 .qrmini{width:118px;height:118px;display:block;margin:0 auto}
@@ -239,11 +228,8 @@ section{padding:clamp(80px,13vh,150px) 0}
 .figure .cur{font-size:.5em;vertical-align:.52em;letter-spacing:-.02em}
 .figure .per{font-size:.12em;letter-spacing:-.01em;margin-left:.08em;position:relative;z-index:4}
 .incl{margin-top:26px;display:grid;gap:10px;font-size:var(--step-body)}
-.overlap{position:absolute;right:-6px;top:-86px;width:min(180px,30vw);transform:rotate(-3deg);z-index:0;pointer-events:none}
-.overlap img{width:100%;border-radius:var(--radius);border:1px solid #cfd8db}
 @media (min-width:1000px){
   .price-grid{grid-template-columns:4fr 8fr;gap:72px}
-  .overlap{right:1%;top:-132px;width:230px}
 }
 
 /* faq */
@@ -310,7 +296,6 @@ details .ans{padding:0 24px 22px;font-size:var(--step-body);max-width:52ch}
   html{scroll-behavior:auto}
   .rise,.rise.in{opacity:1;transform:none;transition:none}
   .hero h1 .ln b{transform:none;animation:none}
-  .field:hover .card{transform:none}
 }
 </style>
 </head>
@@ -336,29 +321,30 @@ details .ans{padding:0 24px 22px;font-size:var(--step-body);max-width:52ch}
     <div class="wrap hero-inner">
       <h1>
         <span class="ln"><b>Today you made</b></span>
-        <span class="ln"><b>&#8377;<span id="sum">8,067</span></b></span>
+        <span class="ln"><b>&#8377;<span id="sum">5,751</span></b></span>
       </h1>
-      <p class="under rise">Not what you sold. What you kept, after everything that went out.</p>
-      <div class="act rise">
+      <p class="under">Not what you sold. What you kept, after everything that went out.</p>
+      <div class="act">
         <a class="btn" href="https://wa.me/918988159401?text=Hi%2C%20I%20run%20a%20cafe%20and%20I%20saw%20Rextro%20Cafe.">Message me on WhatsApp</a>
         <a class="textlink" href="/demo">See the real app</a>
       </div>
 
-      <div class="chips rise">
+      <div class="chips">
         <div class="chip" data-ui>
-          <label for="c1">Today&rsquo;s sales <b>&#8377;<span id="v1">15,150</span></b></label>
-          <input id="c1" type="range" min="2000" max="60000" step="250" value="15150">
+          <label for="c1">Total sales <b>&#8377;<span id="v1">11,750</span></b></label>
+          <input id="c1" type="range" min="2000" max="60000" step="50" value="11750">
         </div>
         <div class="chip" data-ui>
-          <label for="c2">Ingredients <b><span id="v2">32</span>%</b></label>
-          <input id="c2" type="range" min="18" max="55" step="1" value="32">
+          <label for="c2">Ingredients &amp; supplies <b>&#8377;<span id="v2">3,729</span></b></label>
+          <input id="c2" type="range" min="0" max="24000" step="1" value="3729">
         </div>
         <div class="chip" data-ui>
-          <label for="c3">Rent &amp; salaries, a day <b>&#8377;<span id="v3">2,270</span></b></label>
-          <input id="c3" type="range" min="500" max="9000" step="50" value="2270">
+          <label for="c3">Fixed costs, allocated <b>&#8377;<span id="v3">2,270</span></b></label>
+          <input id="c3" type="range" min="0" max="9000" step="10" value="2270">
         </div>
       </div>
-      <p class="small" style="margin-top:18px">Move them. That is the sum the app does for you every evening.</p>
+      <p class="small" style="margin-top:20px;max-width:44ch">Those three figures are a real evening on my own
+        counter, and the screen that printed them is further down this page. Move any of them.</p>
     </div>
   </header>
 
@@ -366,7 +352,7 @@ details .ans{padding:0 24px 22px;font-size:var(--step-body);max-width:52ch}
   <section id="how" style="padding:0">
     <div class="fields">
       <div class="field rise">
-        <h2 class="fieldhead rise">A sale, all the way through</h2>
+        <h2 class="fieldhead">A sale, all the way through</h2>
         <div class="card">
           <div class="ocard" data-ui>
             <div class="top"><span class="tbl">Table 4</span><span class="when">just now</span></div>
@@ -376,7 +362,7 @@ details .ans{padding:0 24px 22px;font-size:var(--step-body);max-width:52ch}
             <span class="state new">Waiting</span>
           </div>
         </div>
-        <p class="clause rise">First it lands.</p>
+        <p class="clause">First it lands.</p>
       </div>
       <div class="field rise">
         <div class="card">
@@ -388,7 +374,7 @@ details .ans{padding:0 24px 22px;font-size:var(--step-body);max-width:52ch}
             <span class="state ok">Running</span>
           </div>
         </div>
-        <p class="clause rise">Then your staff take it.</p>
+        <p class="clause">Then your staff take it.</p>
       </div>
       <div class="field rise">
         <div class="card">
@@ -400,7 +386,7 @@ details .ans{padding:0 24px 22px;font-size:var(--step-body);max-width:52ch}
             <div class="stock">Nobody counted anything. <b>Milk left: 4.2 L</b></div>
           </div>
         </div>
-        <p class="clause rise">Then the stock moves itself.</p>
+        <p class="clause">Then the stock moves itself.</p>
       </div>
       <div class="field rise">
         <div class="card">
@@ -412,7 +398,7 @@ details .ans{padding:0 24px 22px;font-size:var(--step-body);max-width:52ch}
             <div class="tot"><span>Kept</span><span class="profit">&#8377;171</span></div>
           </div>
         </div>
-        <p class="clause rise">Then it is counted.</p>
+        <p class="clause">Then it is counted.</p>
       </div>
     </div>
   </section>
@@ -546,10 +532,8 @@ details .ans{padding:0 24px 22px;font-size:var(--step-body);max-width:52ch}
               nothing else &mdash; no accounts, no margins.</p>
           </div>
           <div class="frag">
-            <div class="fragbox" data-ui>
-              <p class="hd">WHO IS ON THIS PHONE</p>
-              <div class="pins"><span class="pin on">Staff</span><span class="pin">Co-owner</span><span class="pin">Owner</span></div>
-            </div>
+<img class="fragshot" src="/shots/frag-roles.jpg" width="480" height="372" loading="lazy"
+                 decoding="async" alt="The staff phone: a billing tab, a purchases tab, and nothing else">
           </div>
         </div>
 
@@ -560,11 +544,8 @@ details .ans{padding:0 24px 22px;font-size:var(--step-body);max-width:52ch}
               refuses &mdash; not just the button.</p>
           </div>
           <div class="frag">
-            <div class="fragbox" data-ui>
-              <p class="hd">TODAY&rsquo;S ORDERS</p>
-              <div class="row"><span>Order 3 &middot; paid</span><span class="d">no delete</span></div>
-              <div class="row"><span>Order 4 &middot; running</span><span class="u">can edit</span></div>
-            </div>
+<img class="fragshot" src="/shots/frag-orders.jpg" width="480" height="395" loading="lazy"
+                 decoding="async" alt="Two settled orders. Cash can be swapped to UPI; neither can be removed">
           </div>
         </div>
 
@@ -619,11 +600,8 @@ details .ans{padding:0 24px 22px;font-size:var(--step-body);max-width:52ch}
               accounts until you say yes.</p>
           </div>
           <div class="frag">
-            <div class="fragbox" data-ui>
-              <p class="hd">STAFF PURCHASES</p>
-              <div class="row"><span>Milk, 10 L &middot; Ravi</span><span>&#8377;620</span></div>
-              <div class="row"><span>waiting for you</span><span class="u">Approve</span></div>
-            </div>
+<img class="fragshot" src="/shots/frag-approve.jpg" width="340" height="365" loading="lazy"
+                 decoding="async" alt="The approval: stock for the shop, a shop expense, or just approve">
           </div>
         </div>
       </div>
@@ -640,9 +618,6 @@ details .ans{padding:0 24px 22px;font-size:var(--step-body);max-width:52ch}
       </div>
       <div class="rise">
         <p class="figure"><span class="cur">&#8377;</span>499<span class="per">a month</span>
-          <span class="overlap" aria-hidden="true">
-            <img src="/shots/profit.jpg" width="900" height="560" loading="lazy" decoding="async" alt="">
-          </span>
         </p>
         <div class="incl">
           <span>First month free, nothing to pay up front</span>
@@ -742,9 +717,9 @@ details .ans{padding:0 24px 22px;font-size:var(--step-body);max-width:52ch}
 
   // the sum the app does every evening: sales, less what went into the food, less the day's share of rent and wages
   function recalc() {
-    var sales = +c1.value, pct = +c2.value, fixed = +c3.value;
-    v1.textContent = inr(sales); v2.textContent = pct; v3.textContent = inr(fixed);
-    var kept = sales - (sales * pct / 100) - fixed;
+    var sales = +c1.value, food = +c2.value, fixed = +c3.value;
+    v1.textContent = inr(sales); v2.textContent = inr(food); v3.textContent = inr(fixed);
+    var kept = sales - food - fixed;
     sum.textContent = inr(kept);
     sum.parentElement.style.color = kept < 0 ? '#b3261e' : '';
   }
