@@ -1,0 +1,2660 @@
+{
+ "url": "index.html",
+ "at": "2026-10-25T10:42:10.808Z",
+ "allow": [],
+ "viewports": [
+  {
+   "width": 1440,
+   "height": 900,
+   "load": "load",
+   "screens": 12,
+   "filled": [
+    0.33,
+    0.98,
+    0.43,
+    0.49,
+    0.54,
+    0.98,
+    0.66,
+    0.79,
+    0.84,
+    0.5,
+    0.83,
+    0.58
+   ],
+   "motion": {
+    "elements": 36,
+    "css": 2,
+    "transitions": 34,
+    "scripted": 0,
+    "videos": 1,
+    "playingVideos": 1
+   },
+   "metrics": {
+    "viewport": {
+     "w": 1440,
+     "h": 900
+    },
+    "page": {
+     "height": 10208,
+     "screens": 11.3,
+     "words": 956,
+     "img": 9,
+     "video": 1,
+     "canvas": 0,
+     "svg": 0,
+     "sections": 7,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 17,
+     "uiAbuse": false,
+     "realPictures": 9,
+     "videoCount": 1,
+     "uiPictures": 1,
+     "pictureSamples": [
+      "counter.jpg",
+      "billing.jpg",
+      "profit.jpg",
+      "stock.jpg",
+      "orders.jpg",
+      "approve.jpg",
+      "coffee-house.jpg",
+      "profit.jpg"
+     ],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [],
+     "emoji": [],
+     "videosNoPoster": 0
+    },
+    "hero": {
+     "text": "Today you made ₹8,120",
+     "words": 4,
+     "chars": 21,
+     "lines": 2,
+     "size": 121,
+     "vw": 8.4,
+     "font": "Libre Franklin",
+     "weight": 700,
+     "tracking": -0.035,
+     "leading": 1,
+     "upper": false,
+     "italic": false,
+     "mono": false,
+     "align": "center",
+     "position": "center",
+     "widthRatio": 0.84,
+     "top": 144,
+     "tag": "h1",
+     "kind": "heading"
+    },
+    "h1": {
+     "text": "Today you made ₹8,120",
+     "words": 4,
+     "lines": 2,
+     "size": 121,
+     "font": "Libre Franklin"
+    },
+    "headings": [
+     {
+      "text": "Today you made ₹8,120",
+      "words": 4,
+      "chars": 21,
+      "lines": 2,
+      "size": 121,
+      "vw": 8.4,
+      "font": "Libre Franklin",
+      "weight": 700,
+      "tracking": -0.035,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "center",
+      "position": "center",
+      "widthRatio": 0.84,
+      "top": 144,
+      "tag": "h1",
+      "kind": "heading"
+     },
+     {
+      "text": "A sale, all the way through",
+      "words": 6,
+      "chars": 27,
+      "lines": 2,
+      "size": 31.7,
+      "vw": 2.2,
+      "font": "Libre Franklin",
+      "weight": 700,
+      "tracking": -0.035,
+      "leading": 1.04,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.19,
+      "top": 897,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Then your staff take it.",
+      "words": 5,
+      "chars": 24,
+      "lines": 2,
+      "size": 28.8,
+      "vw": 2,
+      "font": "Libre Franklin",
+      "weight": 700,
+      "tracking": -0.03,
+      "leading": 1.06,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.19,
+      "top": 1476,
+      "tag": "p",
+      "kind": "statement"
+     },
+     {
+      "text": "Then the stock moves itself.",
+      "words": 5,
+      "chars": 28,
+      "lines": 2,
+      "size": 28.8,
+      "vw": 2,
+      "font": "Libre Franklin",
+      "weight": 700,
+      "tracking": -0.03,
+      "leading": 1.06,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.19,
+      "top": 1476,
+      "tag": "p",
+      "kind": "statement"
+     },
+     {
+      "text": "First it lands.",
+      "words": 3,
+      "chars": 15,
+      "lines": 1,
+      "size": 28.8,
+      "vw": 2,
+      "font": "Libre Franklin",
+      "weight": 700,
+      "tracking": -0.03,
+      "leading": 1.06,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.19,
+      "top": 1507,
+      "tag": "p",
+      "kind": "statement"
+     },
+     {
+      "text": "Then it is counted.",
+      "words": 4,
+      "chars": 19,
+      "lines": 1,
+      "size": 28.8,
+      "vw": 2,
+      "font": "Libre Franklin",
+      "weight": 700,
+      "tracking": -0.03,
+      "leading": 1.06,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.19,
+      "top": 1507,
+      "tag": "p",
+      "kind": "statement"
+     },
+     {
+      "text": "One order, three states",
+      "words": 4,
+      "chars": 23,
+      "lines": 1,
+      "size": 64,
+      "vw": 4.4,
+      "font": "Libre Franklin",
+      "weight": 700,
+      "tracking": -0.035,
+      "leading": 0.92,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.5,
+      "top": 2230,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Twelve seconds, at the market",
+      "words": 5,
+      "chars": 29,
+      "lines": 2,
+      "size": 64,
+      "vw": 4.4,
+      "font": "Libre Franklin",
+      "weight": 700,
+      "tracking": -0.035,
+      "leading": 0.92,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.38,
+      "top": 3654,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Written in a cafe, for a cafe",
+      "words": 7,
+      "chars": 29,
+      "lines": 1,
+      "size": 64,
+      "vw": 4.4,
+      "font": "Libre Franklin",
+      "weight": 700,
+      "tracking": -0.035,
+      "leading": 0.92,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.63,
+      "top": 4301,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "What your staff can and cannot do",
+      "words": 7,
+      "chars": 33,
+      "lines": 2,
+      "size": 64,
+      "vw": 4.4,
+      "font": "Libre Franklin",
+      "weight": 700,
+      "tracking": -0.035,
+      "leading": 0.92,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.5,
+      "top": 6050,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "₹499a month",
+      "words": 2,
+      "chars": 11,
+      "lines": 1,
+      "size": 230.4,
+      "vw": 16,
+      "font": "Libre Franklin",
+      "weight": 700,
+      "tracking": -0.05,
+      "leading": 0.85,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.53,
+      "top": 7591,
+      "tag": "p",
+      "kind": "statement"
+     },
+     {
+      "text": "The things people ask",
+      "words": 4,
+      "chars": 21,
+      "lines": 2,
+      "size": 52,
+      "vw": 3.6,
+      "font": "Libre Franklin",
+      "weight": 700,
+      "tracking": -0.035,
+      "leading": 0.92,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.27,
+      "top": 8366,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Show me your menu",
+      "words": 4,
+      "chars": 17,
+      "lines": 2,
+      "size": 72,
+      "vw": 5,
+      "font": "Libre Franklin",
+      "weight": 700,
+      "tracking": -0.035,
+      "leading": 0.95,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.33,
+      "top": 9357,
+      "tag": "h2",
+      "kind": "heading"
+     }
+    ],
+    "headingSummary": {
+     "count": 13,
+     "maxLines": 2,
+     "over2Lines": 0,
+     "statements": 5,
+     "centered": 1,
+     "medianWords": 5,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "Source Serif 4",
+       "share": 0.72,
+       "mono": false
+      },
+      {
+       "family": "Libre Franklin",
+       "share": 0.28,
+       "mono": false
+      }
+     ],
+     "familyCount": 2,
+     "sizes": [
+      14,
+      16,
+      17,
+      18,
+      19,
+      26,
+      28,
+      29,
+      32,
+      52,
+      64,
+      72,
+      115,
+      121,
+      230
+     ],
+     "sizeCount": 15,
+     "notLoaded": [],
+     "body": {
+      "font": "Source Serif 4",
+      "size": 19,
+      "leading": 1.55,
+      "weight": 400,
+      "tracking": 0,
+      "contrast": 12.9
+     },
+     "measureChars": 83,
+     "max": {
+      "size": 230.4,
+      "vw": 16,
+      "font": "Libre Franklin",
+      "text": "499"
+     },
+     "monoShare": 0,
+     "monoProseShare": 0,
+     "monoFamilies": [],
+     "monoSamples": [],
+     "microLabels": 0,
+     "microLabelShare": 0,
+     "microSamples": [],
+     "upperShare": 0.01,
+     "centerShare": 0.04,
+     "smallText": 0
+    },
+    "eyebrows": [],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#f7f9fa",
+     "bodyBgHsl": {
+      "h": 200,
+      "s": 0.23,
+      "l": 0.97
+     },
+     "dark": false,
+     "sectionBgs": [
+      {
+       "color": "#ecf0f2",
+       "top": 4184,
+       "hsl": {
+        "h": 200,
+        "s": 0.19,
+        "l": 0.94
+       }
+      },
+      {
+       "color": "#0d7480",
+       "top": 9035,
+       "hsl": {
+        "h": 186,
+        "s": 0.82,
+        "l": 0.28
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#1f3038",
+       "share": 0.67
+      },
+      {
+       "color": "#5d6b72",
+       "share": 0.17
+      },
+      {
+       "color": "#13232b",
+       "share": 0.07
+      },
+      {
+       "color": "#ffffff",
+       "share": 0.04
+      },
+      {
+       "color": "#4a5a62",
+       "share": 0.02
+      }
+     ],
+     "button": {
+      "bg": "#0d7480",
+      "hsl": {
+       "h": 186,
+       "s": 0.82,
+       "l": 0.28
+      },
+      "fg": "#ffffff"
+     },
+     "lowContrast": []
+    },
+    "buttons": {
+     "count": 7,
+     "inHero": 2,
+     "radius": 4,
+     "height": 52,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "Message me",
+      "Message me on WhatsApp"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 0,
+     "shadowOverlay": 1,
+     "shadowSamples": [],
+     "gradients": 0,
+     "scrims": 0,
+     "gradientSamples": [],
+     "gradientText": 0,
+     "hairlines": 0,
+     "hairlineSamples": [],
+     "outlinedBoxes": 1,
+     "dashed": 0,
+     "blurred": 0,
+     "roundedBoxes": 12,
+     "boxRadius": 6,
+     "squareMedia": 1,
+     "roundedMedia": 8,
+     "mediaRadius": 4,
+     "textShadow": 0,
+     "cardRows": [
+      {
+       "count": 3,
+       "iconTopped": false,
+       "rounded": true,
+       "top": 617
+      },
+      {
+       "count": 4,
+       "iconTopped": false,
+       "rounded": false,
+       "top": 853
+      },
+      {
+       "count": 6,
+       "iconTopped": false,
+       "rounded": false,
+       "top": 6220
+      }
+     ]
+    },
+    "heroMedia": [],
+    "nav": {
+     "links": 6,
+     "fixed": true,
+     "height": 72,
+     "floatingPill": false,
+     "blur": false
+    },
+    "fontsLoaded": [
+     "libre franklin",
+     "source serif 4"
+    ]
+   },
+   "layout": {
+    "viewport": {
+     "w": 1440,
+     "h": 900
+    },
+    "pageH": 10208,
+    "margins": {
+     "left": 73,
+     "right": 88
+    },
+    "sections": [
+     {
+      "sel": "header.hero",
+      "tag": "header",
+      "top": 72,
+      "height": 781,
+      "words": 49,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Today you made",
+       "size": 121,
+       "tag": "h1"
+      },
+      "left": 127,
+      "right": 254,
+      "textLeft": 127,
+      "textRight": 255,
+      "fullBleed": false,
+      "footer": false,
+      "hero": true,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#how",
+      "tag": "section",
+      "top": 853,
+      "height": 756,
+      "words": 86,
+      "media": 0,
+      "middle": 122,
+      "heading": {
+       "text": "A sale, all the way through",
+       "size": 32,
+       "tag": "h2"
+      },
+      "left": 56,
+      "right": 88,
+      "textLeft": 56,
+      "textRight": 88,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "figure.band.rise",
+      "tag": "figure",
+      "top": 1609,
+      "height": 504,
+      "words": 18,
+      "media": 1,
+      "middle": 0,
+      "heading": null,
+      "left": 109,
+      "right": 725,
+      "textLeft": 109,
+      "textRight": 725,
+      "fullBleed": true,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "div.wrap",
+      "tag": "div",
+      "top": 2230,
+      "height": 533,
+      "words": 45,
+      "media": 0,
+      "middle": 186,
+      "heading": {
+       "text": "Arrives",
+       "size": 26,
+       "tag": "p"
+      },
+      "left": 109,
+      "right": 449,
+      "textLeft": 109,
+      "textRight": 458,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "div.wrap",
+      "tag": "div",
+      "top": 2843,
+      "height": 543,
+      "words": 38,
+      "media": 5,
+      "middle": 18,
+      "heading": null,
+      "left": 109,
+      "right": 124,
+      "textLeft": 109,
+      "textRight": 131,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "div.wrap.film",
+      "tag": "div",
+      "top": 3467,
+      "height": 600,
+      "words": 33,
+      "media": 1,
+      "middle": 56,
+      "heading": {
+       "text": "Twelve seconds, at the market",
+       "size": 64,
+       "tag": "h3"
+      },
+      "left": 109,
+      "right": 360,
+      "textLeft": 505,
+      "textRight": 360,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#who",
+      "tag": "section",
+      "top": 4184,
+      "height": 1749,
+      "words": 159,
+      "media": 1,
+      "middle": 0,
+      "heading": {
+       "text": "Written in a cafe, for a cafe",
+       "size": 64,
+       "tag": "h2"
+      },
+      "left": 109,
+      "right": 164,
+      "textLeft": 109,
+      "textRight": 452,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#what",
+      "tag": "section",
+      "top": 5933,
+      "height": 1452,
+      "words": 228,
+      "media": 0,
+      "middle": 48,
+      "heading": {
+       "text": "What your staff can and cannot do",
+       "size": 64,
+       "tag": "h2"
+      },
+      "left": 109,
+      "right": 140,
+      "textLeft": 109,
+      "textRight": 140,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#price",
+      "tag": "section",
+      "top": 7385,
+      "height": 864,
+      "words": 72,
+      "media": 1,
+      "middle": 81,
+      "heading": {
+       "text": "499",
+       "size": 230,
+       "tag": "p"
+      },
+      "left": 109,
+      "right": 117,
+      "textLeft": 109,
+      "textRight": 262,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#questions",
+      "tag": "section",
+      "top": 8249,
+      "height": 786,
+      "words": 229,
+      "media": 0,
+      "middle": 214,
+      "heading": {
+       "text": "The things people ask",
+       "size": 52,
+       "tag": "h2"
+      },
+      "left": 109,
+      "right": 396,
+      "textLeft": 109,
+      "textRight": 396,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section.cta",
+      "tag": "section",
+      "top": 9035,
+      "height": 756,
+      "words": 42,
+      "media": 0,
+      "middle": 258,
+      "heading": {
+       "text": "Show me",
+       "size": 72,
+       "tag": "h2"
+      },
+      "left": 109,
+      "right": 268,
+      "textLeft": 109,
+      "textRight": 323,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "footer.foot",
+      "tag": "footer",
+      "top": 9791,
+      "height": 416,
+      "words": 72,
+      "media": 0,
+      "middle": 242,
+      "heading": null,
+      "left": 109,
+      "right": 124,
+      "textLeft": 109,
+      "textRight": 124,
+      "fullBleed": false,
+      "footer": true,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     }
+    ],
+    "gaps": [],
+    "h1s": [
+     {
+      "text": "Today you made ₹8,120",
+      "size": 121,
+      "top": 144,
+      "firstScreen": true
+     }
+    ],
+    "edgeText": [],
+    "edges": [
+     {
+      "x": 109,
+      "n": 11
+     },
+     {
+      "x": 573,
+      "n": 7
+     },
+     {
+      "x": 133,
+      "n": 4
+     },
+     {
+      "x": 433,
+      "n": 4
+     },
+     {
+      "x": 538,
+      "n": 4
+     },
+     {
+      "x": 943,
+      "n": 4
+     },
+     {
+      "x": 505,
+      "n": 2
+     },
+     {
+      "x": 56,
+      "n": 1
+     }
+    ],
+    "leftBlocks": 37,
+    "bodySize": 19,
+    "stage": false,
+    "explains": true,
+    "slivers": [],
+    "voidShare": 0.14,
+    "voidBox": {
+     "x": 1200,
+     "y": 120,
+     "w": 240,
+     "h": 780
+    }
+   },
+   "app": null,
+   "consoleErrors": []
+  },
+  {
+   "width": 768,
+   "height": 1024,
+   "load": "load",
+   "screens": 12,
+   "filled": [
+    0.49,
+    0.96,
+    0.73,
+    0.52,
+    0.4,
+    0.68,
+    0.86,
+    0.85,
+    0.88,
+    0.82,
+    0.7,
+    0.97
+   ],
+   "motion": {
+    "elements": 37,
+    "css": 2,
+    "transitions": 35,
+    "scripted": 0,
+    "videos": 1,
+    "playingVideos": 1
+   },
+   "metrics": {
+    "viewport": {
+     "w": 768,
+     "h": 1024
+    },
+    "page": {
+     "height": 12846,
+     "screens": 12.5,
+     "words": 949,
+     "img": 9,
+     "video": 1,
+     "canvas": 0,
+     "svg": 0,
+     "sections": 7,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 17,
+     "uiAbuse": false,
+     "realPictures": 9,
+     "videoCount": 1,
+     "uiPictures": 1,
+     "pictureSamples": [
+      "counter.jpg",
+      "billing.jpg",
+      "profit.jpg",
+      "stock.jpg",
+      "orders.jpg",
+      "approve.jpg",
+      "coffee-house.jpg",
+      "profit.jpg"
+     ],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [],
+     "emoji": [],
+     "videosNoPoster": 0
+    },
+    "hero": {
+     "text": "Today you made ₹8,120",
+     "words": 4,
+     "chars": 21,
+     "lines": 2,
+     "size": 64.5,
+     "vw": 8.4,
+     "font": "Libre Franklin",
+     "weight": 700,
+     "tracking": -0.035,
+     "leading": 1,
+     "upper": false,
+     "italic": false,
+     "mono": false,
+     "align": "center",
+     "position": "center",
+     "widthRatio": 0.91,
+     "top": 154,
+     "tag": "h1",
+     "kind": "heading"
+    },
+    "h1": {
+     "text": "Today you made ₹8,120",
+     "words": 4,
+     "lines": 2,
+     "size": 64.5,
+     "font": "Libre Franklin"
+    },
+    "headings": [
+     {
+      "text": "Today you made ₹8,120",
+      "words": 4,
+      "chars": 21,
+      "lines": 2,
+      "size": 64.5,
+      "vw": 8.4,
+      "font": "Libre Franklin",
+      "weight": 700,
+      "tracking": -0.035,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "center",
+      "position": "center",
+      "widthRatio": 0.91,
+      "top": 154,
+      "tag": "h1",
+      "kind": "heading"
+     },
+     {
+      "text": "One order, three states",
+      "words": 4,
+      "chars": 23,
+      "lines": 1,
+      "size": 45.4,
+      "vw": 5.9,
+      "font": "Libre Franklin",
+      "weight": 700,
+      "tracking": -0.035,
+      "leading": 0.92,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.67,
+      "top": 2924,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Twelve seconds, at the market",
+      "words": 5,
+      "chars": 29,
+      "lines": 2,
+      "size": 45.4,
+      "vw": 5.9,
+      "font": "Libre Franklin",
+      "weight": 700,
+      "tracking": -0.035,
+      "leading": 0.92,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.5,
+      "top": 5301,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Written in a cafe, for a cafe",
+      "words": 7,
+      "chars": 29,
+      "lines": 1,
+      "size": 45.4,
+      "vw": 5.9,
+      "font": "Libre Franklin",
+      "weight": 700,
+      "tracking": -0.035,
+      "leading": 0.92,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.84,
+      "top": 5754,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "What your staff can and cannot do",
+      "words": 7,
+      "chars": 33,
+      "lines": 2,
+      "size": 45.4,
+      "vw": 5.9,
+      "font": "Libre Franklin",
+      "weight": 700,
+      "tracking": -0.035,
+      "leading": 0.92,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.67,
+      "top": 7164,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "₹499a month",
+      "words": 2,
+      "chars": 11,
+      "lines": 1,
+      "size": 122.9,
+      "vw": 16,
+      "font": "Libre Franklin",
+      "weight": 700,
+      "tracking": -0.05,
+      "leading": 0.85,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.91,
+      "top": 9934,
+      "tag": "p",
+      "kind": "statement"
+     },
+     {
+      "text": "The things people ask",
+      "words": 4,
+      "chars": 21,
+      "lines": 1,
+      "size": 45.4,
+      "vw": 5.9,
+      "font": "Libre Franklin",
+      "weight": 700,
+      "tracking": -0.035,
+      "leading": 0.92,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.67,
+      "top": 10604,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Show me your menu",
+      "words": 4,
+      "chars": 17,
+      "lines": 2,
+      "size": 40,
+      "vw": 5.2,
+      "font": "Libre Franklin",
+      "weight": 700,
+      "tracking": -0.035,
+      "leading": 0.95,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.91,
+      "top": 11550,
+      "tag": "h2",
+      "kind": "heading"
+     }
+    ],
+    "headingSummary": {
+     "count": 8,
+     "maxLines": 2,
+     "over2Lines": 0,
+     "statements": 1,
+     "centered": 1,
+     "medianWords": 4,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "Source Serif 4",
+       "share": 0.72,
+       "mono": false
+      },
+      {
+       "family": "Libre Franklin",
+       "share": 0.28,
+       "mono": false
+      }
+     ],
+     "familyCount": 2,
+     "sizes": [
+      14,
+      15,
+      16,
+      17,
+      18,
+      22,
+      23,
+      24,
+      40,
+      45,
+      61,
+      65,
+      123
+     ],
+     "sizeCount": 13,
+     "notLoaded": [],
+     "body": {
+      "font": "Source Serif 4",
+      "size": 17.9,
+      "leading": 1.55,
+      "weight": 400,
+      "tracking": 0,
+      "contrast": 12.9
+     },
+     "measureChars": 83,
+     "max": {
+      "size": 122.9,
+      "vw": 16,
+      "font": "Libre Franklin",
+      "text": "499"
+     },
+     "monoShare": 0,
+     "monoProseShare": 0,
+     "monoFamilies": [],
+     "monoSamples": [],
+     "microLabels": 0,
+     "microLabelShare": 0,
+     "microSamples": [],
+     "upperShare": 0.01,
+     "centerShare": 0.04,
+     "smallText": 0
+    },
+    "eyebrows": [],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#f7f9fa",
+     "bodyBgHsl": {
+      "h": 200,
+      "s": 0.23,
+      "l": 0.97
+     },
+     "dark": false,
+     "sectionBgs": [
+      {
+       "color": "#e3e9eb",
+       "top": 953,
+       "hsl": {
+        "h": 195,
+        "s": 0.17,
+        "l": 0.91
+       }
+      },
+      {
+       "color": "#d6dee1",
+       "top": 953,
+       "hsl": {
+        "h": 196,
+        "s": 0.15,
+        "l": 0.86
+       }
+      },
+      {
+       "color": "#c7d2d6",
+       "top": 1587,
+       "hsl": {
+        "h": 196,
+        "s": 0.15,
+        "l": 0.81
+       }
+      },
+      {
+       "color": "#b6c4c9",
+       "top": 1587,
+       "hsl": {
+        "h": 196,
+        "s": 0.15,
+        "l": 0.75
+       }
+      },
+      {
+       "color": "#ecf0f2",
+       "top": 5621,
+       "hsl": {
+        "h": 200,
+        "s": 0.19,
+        "l": 0.94
+       }
+      },
+      {
+       "color": "#0d7480",
+       "top": 11361,
+       "hsl": {
+        "h": 186,
+        "s": 0.82,
+        "l": 0.28
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#1f3038",
+       "share": 0.68
+      },
+      {
+       "color": "#5d6b72",
+       "share": 0.17
+      },
+      {
+       "color": "#13232b",
+       "share": 0.07
+      },
+      {
+       "color": "#ffffff",
+       "share": 0.04
+      },
+      {
+       "color": "#4a5a62",
+       "share": 0.02
+      }
+     ],
+     "button": {
+      "bg": "#0d7480",
+      "hsl": {
+       "h": 186,
+       "s": 0.82,
+       "l": 0.28
+      },
+      "fg": "#ffffff"
+     },
+     "lowContrast": []
+    },
+    "buttons": {
+     "count": 7,
+     "inHero": 2,
+     "radius": 4,
+     "height": 52,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "Message me",
+      "Message me on WhatsApp"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 0,
+     "shadowOverlay": 1,
+     "shadowSamples": [],
+     "gradients": 0,
+     "scrims": 0,
+     "gradientSamples": [],
+     "gradientText": 0,
+     "hairlines": 0,
+     "hairlineSamples": [],
+     "outlinedBoxes": 1,
+     "dashed": 0,
+     "blurred": 0,
+     "roundedBoxes": 12,
+     "boxRadius": 6,
+     "squareMedia": 1,
+     "roundedMedia": 8,
+     "mediaRadius": 4,
+     "textShadow": 0,
+     "cardRows": [
+      {
+       "count": 4,
+       "iconTopped": false,
+       "rounded": false,
+       "top": 953
+      }
+     ]
+    },
+    "heroMedia": [],
+    "nav": {
+     "links": 2,
+     "fixed": true,
+     "height": 72,
+     "floatingPill": false,
+     "blur": false
+    },
+    "fontsLoaded": [
+     "libre franklin",
+     "source serif 4"
+    ]
+   },
+   "layout": {
+    "viewport": {
+     "w": 768,
+     "h": 1024
+    },
+    "pageH": 12846,
+    "margins": {
+     "left": 28,
+     "right": 59
+    },
+    "sections": [
+     {
+      "sel": "header.hero",
+      "tag": "header",
+      "top": 72,
+      "height": 881,
+      "words": 49,
+      "media": 0,
+      "middle": 36,
+      "heading": {
+       "text": "Today you made",
+       "size": 65,
+       "tag": "h1"
+      },
+      "left": 45,
+      "right": 60,
+      "textLeft": 45,
+      "textRight": 60,
+      "fullBleed": false,
+      "footer": false,
+      "hero": true,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#how",
+      "tag": "section",
+      "top": 953,
+      "height": 1270,
+      "words": 86,
+      "media": 0,
+      "middle": 114,
+      "heading": {
+       "text": "A sale, all the way through",
+       "size": 24,
+       "tag": "h2"
+      },
+      "left": 28,
+      "right": 101,
+      "textLeft": 28,
+      "textRight": 101,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "figure.band.rise",
+      "tag": "figure",
+      "top": 2222,
+      "height": 568,
+      "words": 18,
+      "media": 1,
+      "middle": 0,
+      "heading": null,
+      "left": 28,
+      "right": 134,
+      "textLeft": 28,
+      "textRight": 134,
+      "fullBleed": true,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "div.wrap",
+      "tag": "div",
+      "top": 2924,
+      "height": 645,
+      "words": 57,
+      "media": 0,
+      "middle": 0,
+      "heading": null,
+      "left": 28,
+      "right": 117,
+      "textLeft": 28,
+      "textRight": 126,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "div.wrap",
+      "tag": "div",
+      "top": 3661,
+      "height": 991,
+      "words": 38,
+      "media": 5,
+      "middle": 16,
+      "heading": null,
+      "left": 28,
+      "right": 43,
+      "textLeft": 28,
+      "textRight": 52,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "div.wrap.film",
+      "tag": "div",
+      "top": 4744,
+      "height": 744,
+      "words": 33,
+      "media": 1,
+      "middle": 0,
+      "heading": null,
+      "left": 28,
+      "right": 197,
+      "textLeft": 28,
+      "textRight": 197,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#who",
+      "tag": "section",
+      "top": 5621,
+      "height": 1410,
+      "words": 159,
+      "media": 1,
+      "middle": 0,
+      "heading": {
+       "text": "Written in a cafe, for a cafe",
+       "size": 45,
+       "tag": "h2"
+      },
+      "left": 28,
+      "right": 83,
+      "textLeft": 28,
+      "textRight": 117,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#what",
+      "tag": "section",
+      "top": 7031,
+      "height": 2457,
+      "words": 228,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "What your staff can and cannot do",
+       "size": 45,
+       "tag": "h2"
+      },
+      "left": 28,
+      "right": 59,
+      "textLeft": 28,
+      "textRight": 59,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#price",
+      "tag": "section",
+      "top": 9488,
+      "height": 983,
+      "words": 72,
+      "media": 1,
+      "middle": 0,
+      "heading": {
+       "text": "499",
+       "size": 123,
+       "tag": "p"
+      },
+      "left": 28,
+      "right": 22,
+      "textLeft": 28,
+      "textRight": 204,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#questions",
+      "tag": "section",
+      "top": 10471,
+      "height": 890,
+      "words": 229,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "The things people ask",
+       "size": 45,
+       "tag": "h2"
+      },
+      "left": 28,
+      "right": 272,
+      "textLeft": 28,
+      "textRight": 272,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section.cta",
+      "tag": "section",
+      "top": 11361,
+      "height": 971,
+      "words": 42,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Show me",
+       "size": 40,
+       "tag": "h2"
+      },
+      "left": 28,
+      "right": 320,
+      "textLeft": 28,
+      "textRight": 357,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "footer.foot",
+      "tag": "footer",
+      "top": 12332,
+      "height": 515,
+      "words": 72,
+      "media": 0,
+      "middle": 0,
+      "heading": null,
+      "left": 28,
+      "right": 184,
+      "textLeft": 28,
+      "textRight": 184,
+      "fullBleed": false,
+      "footer": true,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     }
+    ],
+    "gaps": [],
+    "h1s": [
+     {
+      "text": "Today you made ₹8,120",
+      "size": 65,
+      "top": 154,
+      "firstScreen": true
+     }
+    ],
+    "edgeText": [],
+    "edges": [
+     {
+      "x": 52,
+      "n": 19
+     },
+     {
+      "x": 28,
+      "n": 14
+     },
+     {
+      "x": 97,
+      "n": 4
+     }
+    ],
+    "leftBlocks": 37,
+    "bodySize": 18,
+    "stage": false,
+    "explains": true,
+    "slivers": [],
+    "voidShare": 0,
+    "voidBox": null
+   },
+   "app": null,
+   "consoleErrors": []
+  },
+  {
+   "width": 390,
+   "height": 844,
+   "load": "load",
+   "screens": 12,
+   "filled": [
+    0.48,
+    0.91,
+    0.97,
+    0.97,
+    0.52,
+    0.66,
+    0.51,
+    0.7,
+    0.97,
+    0.69,
+    0.83,
+    0.82
+   ],
+   "motion": {
+    "elements": 32,
+    "css": 2,
+    "transitions": 30,
+    "scripted": 0,
+    "videos": 1,
+    "playingVideos": 1
+   },
+   "metrics": {
+    "viewport": {
+     "w": 390,
+     "h": 844
+    },
+    "page": {
+     "height": 13405,
+     "screens": 15.9,
+     "words": 949,
+     "img": 9,
+     "video": 1,
+     "canvas": 0,
+     "svg": 0,
+     "sections": 7,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 17,
+     "uiAbuse": false,
+     "realPictures": 9,
+     "videoCount": 1,
+     "uiPictures": 1,
+     "pictureSamples": [
+      "counter.jpg",
+      "billing.jpg",
+      "profit.jpg",
+      "stock.jpg",
+      "orders.jpg",
+      "approve.jpg",
+      "coffee-house.jpg",
+      "profit.jpg"
+     ],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [],
+     "emoji": [],
+     "videosNoPoster": 0
+    },
+    "hero": {
+     "text": "Today you made ₹8,120",
+     "words": 4,
+     "chars": 21,
+     "lines": 2,
+     "size": 40,
+     "vw": 10.3,
+     "font": "Libre Franklin",
+     "weight": 700,
+     "tracking": -0.035,
+     "leading": 1,
+     "upper": false,
+     "italic": false,
+     "mono": false,
+     "align": "center",
+     "position": "center",
+     "widthRatio": 0.86,
+     "top": 140,
+     "tag": "h1",
+     "kind": "heading"
+    },
+    "h1": {
+     "text": "Today you made ₹8,120",
+     "words": 4,
+     "lines": 2,
+     "size": 40,
+     "font": "Libre Franklin"
+    },
+    "headings": [
+     {
+      "text": "Today you made ₹8,120",
+      "words": 4,
+      "chars": 21,
+      "lines": 2,
+      "size": 40,
+      "vw": 10.3,
+      "font": "Libre Franklin",
+      "weight": 700,
+      "tracking": -0.035,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "center",
+      "position": "center",
+      "widthRatio": 0.86,
+      "top": 140,
+      "tag": "h1",
+      "kind": "heading"
+     },
+     {
+      "text": "A sale, all the way through",
+      "words": 6,
+      "chars": 27,
+      "lines": 2,
+      "size": 24,
+      "vw": 6.2,
+      "font": "Libre Franklin",
+      "weight": 700,
+      "tracking": -0.035,
+      "leading": 1.04,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.57,
+      "top": 985,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "First it lands.",
+      "words": 3,
+      "chars": 15,
+      "lines": 1,
+      "size": 22,
+      "vw": 5.6,
+      "font": "Libre Franklin",
+      "weight": 700,
+      "tracking": -0.03,
+      "leading": 1.06,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.6,
+      "top": 1369,
+      "tag": "p",
+      "kind": "statement"
+     },
+     {
+      "text": "Then your staff take it.",
+      "words": 5,
+      "chars": 24,
+      "lines": 1,
+      "size": 22,
+      "vw": 5.6,
+      "font": "Libre Franklin",
+      "weight": 700,
+      "tracking": -0.03,
+      "leading": 1.06,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.6,
+      "top": 1892,
+      "tag": "p",
+      "kind": "statement"
+     },
+     {
+      "text": "Then the stock moves itself.",
+      "words": 5,
+      "chars": 28,
+      "lines": 2,
+      "size": 22,
+      "vw": 5.6,
+      "font": "Libre Franklin",
+      "weight": 700,
+      "tracking": -0.03,
+      "leading": 1.06,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.6,
+      "top": 2392,
+      "tag": "p",
+      "kind": "statement"
+     },
+     {
+      "text": "Then it is counted.",
+      "words": 4,
+      "chars": 19,
+      "lines": 1,
+      "size": 22,
+      "vw": 5.6,
+      "font": "Libre Franklin",
+      "weight": 700,
+      "tracking": -0.03,
+      "leading": 1.06,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.6,
+      "top": 2939,
+      "tag": "p",
+      "kind": "statement"
+     },
+     {
+      "text": "One order, three states",
+      "words": 4,
+      "chars": 23,
+      "lines": 2,
+      "size": 33.3,
+      "vw": 8.5,
+      "font": "Libre Franklin",
+      "weight": 700,
+      "tracking": -0.035,
+      "leading": 0.92,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.86,
+      "top": 3644,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Twelve seconds, at the market",
+      "words": 5,
+      "chars": 29,
+      "lines": 2,
+      "size": 33.3,
+      "vw": 8.5,
+      "font": "Libre Franklin",
+      "weight": 700,
+      "tracking": -0.035,
+      "leading": 0.92,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.72,
+      "top": 6222,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Written in a cafe, for a cafe",
+      "words": 7,
+      "chars": 29,
+      "lines": 2,
+      "size": 33.3,
+      "vw": 8.5,
+      "font": "Libre Franklin",
+      "weight": 700,
+      "tracking": -0.035,
+      "leading": 0.92,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.86,
+      "top": 6652,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "What your staff can and cannot do",
+      "words": 7,
+      "chars": 33,
+      "lines": 2,
+      "size": 33.3,
+      "vw": 8.5,
+      "font": "Libre Franklin",
+      "weight": 700,
+      "tracking": -0.035,
+      "leading": 0.92,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.86,
+      "top": 8000,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "₹499a month",
+      "words": 2,
+      "chars": 11,
+      "lines": 1,
+      "size": 80,
+      "vw": 20.5,
+      "font": "Libre Franklin",
+      "weight": 700,
+      "tracking": -0.05,
+      "leading": 0.85,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.86,
+      "top": 10599,
+      "tag": "p",
+      "kind": "statement"
+     },
+     {
+      "text": "The things people ask",
+      "words": 4,
+      "chars": 21,
+      "lines": 1,
+      "size": 33.3,
+      "vw": 8.5,
+      "font": "Libre Franklin",
+      "weight": 700,
+      "tracking": -0.035,
+      "leading": 0.92,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.86,
+      "top": 11214,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Show me your menu",
+      "words": 4,
+      "chars": 17,
+      "lines": 2,
+      "size": 40,
+      "vw": 10.3,
+      "font": "Libre Franklin",
+      "weight": 700,
+      "tracking": -0.035,
+      "leading": 0.95,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.86,
+      "top": 12097,
+      "tag": "h2",
+      "kind": "heading"
+     }
+    ],
+    "headingSummary": {
+     "count": 13,
+     "maxLines": 2,
+     "over2Lines": 0,
+     "statements": 5,
+     "centered": 1,
+     "medianWords": 5,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "Source Serif 4",
+       "share": 0.72,
+       "mono": false
+      },
+      {
+       "family": "Libre Franklin",
+       "share": 0.28,
+       "mono": false
+      }
+     ],
+     "familyCount": 2,
+     "sizes": [
+      10,
+      14,
+      16,
+      17,
+      18,
+      20,
+      22,
+      24,
+      33,
+      40,
+      80
+     ],
+     "sizeCount": 11,
+     "notLoaded": [],
+     "body": {
+      "font": "Source Serif 4",
+      "size": 17,
+      "leading": 1.55,
+      "weight": 400,
+      "tracking": 0,
+      "contrast": 12.9
+     },
+     "measureChars": 48,
+     "max": {
+      "size": 80,
+      "vw": 20.5,
+      "font": "Libre Franklin",
+      "text": "499"
+     },
+     "monoShare": 0,
+     "monoProseShare": 0,
+     "monoFamilies": [],
+     "monoSamples": [],
+     "microLabels": 0,
+     "microLabelShare": 0,
+     "microSamples": [],
+     "upperShare": 0.01,
+     "centerShare": 0.04,
+     "smallText": 0
+    },
+    "eyebrows": [],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#f7f9fa",
+     "bodyBgHsl": {
+      "h": 200,
+      "s": 0.23,
+      "l": 0.97
+     },
+     "dark": false,
+     "sectionBgs": [
+      {
+       "color": "#e3e9eb",
+       "top": 945,
+       "hsl": {
+        "h": 195,
+        "s": 0.17,
+        "l": 0.91
+       }
+      },
+      {
+       "color": "#d6dee1",
+       "top": 1468,
+       "hsl": {
+        "h": 196,
+        "s": 0.15,
+        "l": 0.86
+       }
+      },
+      {
+       "color": "#c7d2d6",
+       "top": 1991,
+       "hsl": {
+        "h": 196,
+        "s": 0.15,
+        "l": 0.81
+       }
+      },
+      {
+       "color": "#b6c4c9",
+       "top": 2515,
+       "hsl": {
+        "h": 196,
+        "s": 0.15,
+        "l": 0.75
+       }
+      },
+      {
+       "color": "#ecf0f2",
+       "top": 5665,
+       "hsl": {
+        "h": 200,
+        "s": 0.19,
+        "l": 0.94
+       }
+      },
+      {
+       "color": "#0d7480",
+       "top": 11932,
+       "hsl": {
+        "h": 186,
+        "s": 0.82,
+        "l": 0.28
+       }
+      },
+      {
+       "color": "#ffffff",
+       "top": 12379,
+       "hsl": {
+        "h": 0,
+        "s": 0,
+        "l": 1
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#1f3038",
+       "share": 0.68
+      },
+      {
+       "color": "#5d6b72",
+       "share": 0.17
+      },
+      {
+       "color": "#13232b",
+       "share": 0.07
+      },
+      {
+       "color": "#ffffff",
+       "share": 0.04
+      },
+      {
+       "color": "#4a5a62",
+       "share": 0.02
+      }
+     ],
+     "button": {
+      "bg": "#0d7480",
+      "hsl": {
+       "h": 186,
+       "s": 0.82,
+       "l": 0.28
+      },
+      "fg": "#ffffff"
+     },
+     "lowContrast": []
+    },
+    "buttons": {
+     "count": 7,
+     "inHero": 2,
+     "radius": 4,
+     "height": 52,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "Message me",
+      "Message me on WhatsApp"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 0,
+     "shadowOverlay": 1,
+     "shadowSamples": [],
+     "gradients": 0,
+     "scrims": 0,
+     "gradientSamples": [],
+     "gradientText": 0,
+     "hairlines": 0,
+     "hairlineSamples": [],
+     "outlinedBoxes": 0,
+     "dashed": 0,
+     "blurred": 0,
+     "roundedBoxes": 13,
+     "boxRadius": 6,
+     "squareMedia": 1,
+     "roundedMedia": 2,
+     "mediaRadius": 4,
+     "textShadow": 0,
+     "cardRows": [
+      {
+       "count": 3,
+       "iconTopped": false,
+       "rounded": true,
+       "top": 503
+      },
+      {
+       "count": 6,
+       "iconTopped": false,
+       "rounded": false,
+       "top": 8113
+      }
+     ]
+    },
+    "heroMedia": [],
+    "nav": {
+     "links": 2,
+     "fixed": true,
+     "height": 72,
+     "floatingPill": false,
+     "blur": false
+    },
+    "fontsLoaded": [
+     "libre franklin",
+     "source serif 4"
+    ]
+   },
+   "layout": {
+    "viewport": {
+     "w": 390,
+     "h": 844
+    },
+    "pageH": 13405,
+    "margins": {
+     "left": 28,
+     "right": 29
+    },
+    "sections": [
+     {
+      "sel": "header.hero",
+      "tag": "header",
+      "top": 72,
+      "height": 873,
+      "words": 49,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Today you made",
+       "size": 40,
+       "tag": "h1"
+      },
+      "left": 30,
+      "right": 30,
+      "textLeft": 30,
+      "textRight": 30,
+      "fullBleed": false,
+      "footer": false,
+      "hero": true,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#how",
+      "tag": "section",
+      "top": 945,
+      "height": 2093,
+      "words": 86,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "A sale, all the way through",
+       "size": 24,
+       "tag": "h2"
+      },
+      "left": 28,
+      "right": 99,
+      "textLeft": 28,
+      "textRight": 99,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "figure.band.rise",
+      "tag": "figure",
+      "top": 3038,
+      "height": 496,
+      "words": 18,
+      "media": 1,
+      "middle": 0,
+      "heading": null,
+      "left": 28,
+      "right": 29,
+      "textLeft": 28,
+      "textRight": 29,
+      "fullBleed": true,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "div.wrap",
+      "tag": "div",
+      "top": 3644,
+      "height": 735,
+      "words": 57,
+      "media": 0,
+      "middle": 0,
+      "heading": null,
+      "left": 28,
+      "right": 39,
+      "textLeft": 28,
+      "textRight": 39,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "div.wrap",
+      "tag": "div",
+      "top": 4455,
+      "height": 1134,
+      "words": 38,
+      "media": 5,
+      "middle": 16,
+      "heading": null,
+      "left": 28,
+      "right": 28,
+      "textLeft": 28,
+      "textRight": 35,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "div.wrap.film",
+      "tag": "div",
+      "top": 5665,
+      "height": 744,
+      "words": 33,
+      "media": 1,
+      "middle": 0,
+      "heading": null,
+      "left": 28,
+      "right": 31,
+      "textLeft": 28,
+      "textRight": 31,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#who",
+      "tag": "section",
+      "top": 6518,
+      "height": 1372,
+      "words": 152,
+      "media": 1,
+      "middle": 0,
+      "heading": null,
+      "left": 28,
+      "right": 28,
+      "textLeft": 28,
+      "textRight": 28,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#what",
+      "tag": "section",
+      "top": 7890,
+      "height": 2380,
+      "words": 228,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "What your staff can and cannot do",
+       "size": 33,
+       "tag": "h2"
+      },
+      "left": 28,
+      "right": 44,
+      "textLeft": 28,
+      "textRight": 44,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#price",
+      "tag": "section",
+      "top": 10270,
+      "height": 810,
+      "words": 0,
+      "media": 0,
+      "middle": 0,
+      "heading": null,
+      "left": null,
+      "right": null,
+      "textLeft": null,
+      "textRight": null,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#questions",
+      "tag": "section",
+      "top": 11080,
+      "height": 852,
+      "words": 0,
+      "media": 0,
+      "middle": 0,
+      "heading": null,
+      "left": null,
+      "right": null,
+      "textLeft": null,
+      "textRight": null,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section.cta",
+      "tag": "section",
+      "top": 11932,
+      "height": 945,
+      "words": 42,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Show me",
+       "size": 40,
+       "tag": "h2"
+      },
+      "left": 28,
+      "right": 35,
+      "textLeft": 28,
+      "textRight": 35,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "footer.foot",
+      "tag": "footer",
+      "top": 12876,
+      "height": 529,
+      "words": 72,
+      "media": 0,
+      "middle": 0,
+      "heading": null,
+      "left": 28,
+      "right": 36,
+      "textLeft": 28,
+      "textRight": 36,
+      "fullBleed": false,
+      "footer": true,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     }
+    ],
+    "gaps": [],
+    "h1s": [
+     {
+      "text": "Today you made ₹8,120",
+      "size": 40,
+      "top": 140,
+      "firstScreen": true
+     }
+    ],
+    "edgeText": [],
+    "edges": [
+     {
+      "x": 28,
+      "n": 14
+     },
+     {
+      "x": 52,
+      "n": 12
+     }
+    ],
+    "leftBlocks": 26,
+    "bodySize": 17,
+    "stage": false,
+    "explains": true,
+    "slivers": [],
+    "voidShare": 0,
+    "voidBox": null
+   },
+   "app": null,
+   "consoleErrors": []
+  }
+ ],
+ "findings": [
+  {
+   "level": "WARN",
+   "id": "outlined-box",
+   "width": 1440,
+   "message": "1 box(es) drawn with a 1px outline.",
+   "fix": "Prefer a filled surface or no box.",
+   "alsoAt": [
+    768
+   ]
+  },
+  {
+   "level": "WARN",
+   "id": "card-rows",
+   "width": 1440,
+   "message": "3 rows of identical boxed cards.",
+   "fix": "Vary the composition; not every section is a card grid.",
+   "alsoAt": [
+    390
+   ]
+  },
+  {
+   "level": "WARN",
+   "id": "size-count",
+   "width": 1440,
+   "message": "15 different font sizes (14, 16, 17, 18, 19, 26, 28, 29, 32, 52, 64, 72, 115, 121, 230).",
+   "fix": "A page needs about five: display, heading, lead, body, small.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "WARN",
+   "id": "ragged-edges",
+   "width": 1440,
+   "message": "Left-aligned text starts at 8 different lines (109px, 573px, 133px, 433px, 538px, 943px, 505px); the three most used hold only 59% of it.",
+   "fix": "Pick two or three anchor lines from the grid and start every heading and paragraph on one of them."
+  },
+  {
+   "level": "WARN",
+   "id": "off-centre",
+   "width": 768,
+   "message": "The margins differ: 28px on the left, 59px on the right, at 768px.",
+   "fix": "Put the navigation and the content on one pair of margins; check for padding on one side only, a scrollbar gutter, or a header on another inset than the page."
+  }
+ ],
+ "images": [
+  {
+   "viewport": "desktop",
+   "width": 1440,
+   "fold": "C:\\Users\\aarav\\AppData\\Local\\Temp\\claude\\C--Users-aarav-Rextro-AI\\f6bd8e94-0d5b-4b32-9191-341823664001\\scratchpad\\web\\.taste-skill\\after\\desktop-fold.jpg",
+   "pages": [
+    "C:\\Users\\aarav\\AppData\\Local\\Temp\\claude\\C--Users-aarav-Rextro-AI\\f6bd8e94-0d5b-4b32-9191-341823664001\\scratchpad\\web\\.taste-skill\\after\\desktop-page-01.jpg",
+    "C:\\Users\\aarav\\AppData\\Local\\Temp\\claude\\C--Users-aarav-Rextro-AI\\f6bd8e94-0d5b-4b32-9191-341823664001\\scratchpad\\web\\.taste-skill\\after\\desktop-page-02.jpg",
+    "C:\\Users\\aarav\\AppData\\Local\\Temp\\claude\\C--Users-aarav-Rextro-AI\\f6bd8e94-0d5b-4b32-9191-341823664001\\scratchpad\\web\\.taste-skill\\after\\desktop-page-03.jpg"
+   ],
+   "film": []
+  },
+  {
+   "viewport": "tablet",
+   "width": 768,
+   "fold": "C:\\Users\\aarav\\AppData\\Local\\Temp\\claude\\C--Users-aarav-Rextro-AI\\f6bd8e94-0d5b-4b32-9191-341823664001\\scratchpad\\web\\.taste-skill\\after\\tablet-fold.jpg",
+   "pages": [
+    "C:\\Users\\aarav\\AppData\\Local\\Temp\\claude\\C--Users-aarav-Rextro-AI\\f6bd8e94-0d5b-4b32-9191-341823664001\\scratchpad\\web\\.taste-skill\\after\\tablet-page-01.jpg",
+    "C:\\Users\\aarav\\AppData\\Local\\Temp\\claude\\C--Users-aarav-Rextro-AI\\f6bd8e94-0d5b-4b32-9191-341823664001\\scratchpad\\web\\.taste-skill\\after\\tablet-page-02.jpg"
+   ],
+   "film": []
+  },
+  {
+   "viewport": "mobile",
+   "width": 390,
+   "fold": "C:\\Users\\aarav\\AppData\\Local\\Temp\\claude\\C--Users-aarav-Rextro-AI\\f6bd8e94-0d5b-4b32-9191-341823664001\\scratchpad\\web\\.taste-skill\\after\\mobile-fold.jpg",
+   "pages": [
+    "C:\\Users\\aarav\\AppData\\Local\\Temp\\claude\\C--Users-aarav-Rextro-AI\\f6bd8e94-0d5b-4b32-9191-341823664001\\scratchpad\\web\\.taste-skill\\after\\mobile-page-01.jpg",
+    "C:\\Users\\aarav\\AppData\\Local\\Temp\\claude\\C--Users-aarav-Rextro-AI\\f6bd8e94-0d5b-4b32-9191-341823664001\\scratchpad\\web\\.taste-skill\\after\\mobile-page-02.jpg"
+   ],
+   "film": []
+  }
+ ]
+}
