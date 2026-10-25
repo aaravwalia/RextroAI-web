@@ -11,6 +11,15 @@ export default defineConfig(() => {
         '@': path.resolve(__dirname, '.'),
       },
     },
+    build: {
+      rollupOptions: {
+        // index.html is the landing page; demo.html mounts the app itself
+        input: {
+          main: path.resolve(__dirname, 'index.html'),
+          demo: path.resolve(__dirname, 'demo.html'),
+        },
+      },
+    },
     server: {
       // HMR is disabled in AI Studio via DISABLE_HMR env var.
       // Do not modifyâfile watching is disabled to prevent flickering during agent edits.

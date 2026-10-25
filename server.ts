@@ -113,6 +113,10 @@ async function startServer() {
     // Production static serving
     const distPath = path.join(process.cwd(), "dist");
     app.use(express.static(distPath));
+    // /demo and anything under it is the app; everything else is the landing page
+    app.get(/^\/demo(\/.*)?$/, (req, res) => {
+      res.sendFile(path.join(distPath, "demo.html"));
+    });
     app.get("*", (req, res) => {
       res.sendFile(path.join(distPath, "index.html"));
     });
