@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://rextro-ai-delta.vercel.app/sitemap.xml
