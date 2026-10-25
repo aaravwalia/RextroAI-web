@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Billing software for cafes, restaurants and furniture shops | Rextro AI</title>
-<meta name="description" content="Billing, stock and the day's real profit on the phone your staff already has. No machine to buy, no contract. Rs 499 a month for a cafe or restaurant, first month free, set up in person in India.">
+<meta name="description" content="Billing, stock and the month's real profit on the phone your staff already has. No machine to buy, no contract. Rs 499 a month for a cafe or restaurant, first month free, set up in person in India.">
 <link rel="canonical" href="https://rextro-ai-delta.vercel.app/">
 <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
 <meta name="author" content="Aarav Walia">
@@ -12,14 +12,14 @@
 <meta property="og:site_name" content="Rextro AI">
 <meta property="og:locale" content="en_IN">
 <meta property="og:url" content="https://rextro-ai-delta.vercel.app/">
-<meta property="og:title" content="What your shop actually made today | Rextro AI">
+<meta property="og:title" content="What your shop actually made this month | Rextro AI">
 <meta property="og:description" content="Billing, stock and the evening sum for cafes, restaurants and furniture shops. Your till shows what you sold. This shows what you kept.">
 <meta property="og:image" content="https://rextro-ai-delta.vercel.app/share-card.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="The Profit and Loss screen: total sales, ingredients, fixed costs and the net profit left over">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="What your shop actually made today | Rextro AI">
+<meta name="twitter:title" content="What your shop actually made this month | Rextro AI">
 <meta name="twitter:description" content="Billing, stock and the evening sum for cafes, restaurants and furniture shops.">
 <meta name="twitter:image" content="https://rextro-ai-delta.vercel.app/share-card.jpg">
 <meta name="theme-color" content="#f7f9fa">
@@ -103,6 +103,12 @@ a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible{o
 @media (min-width:900px){
   .hero-inner{padding-bottom:12px}
   .chips{grid-template-columns:repeat(3,1fr);gap:16px}
+}
+@media (min-width:1100px){
+  .hero-inner{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);
+    gap:clamp(40px,5vw,80px);align-items:center}
+  .chips{grid-template-columns:1fr;gap:12px;margin:0}
+  .hero-do .small{margin-top:16px !important;max-width:38ch}
 }
 
 /* a real control from the product; data-ui keeps its own conventions */
@@ -360,9 +366,10 @@ details .ans{padding:0 24px 22px;font-size:var(--step-body);max-width:52ch}
   <!-- HERO — controls on the sentence -->
   <header class="hero">
     <div class="wrap hero-inner">
+      <div class="hero-say">
       <h1>
-        <span class="ln"><b>Today you made</b></span>
-        <span class="ln"><b>&#8377;<span id="sum">5,751</span></b></span>
+        <span class="ln"><b>This month</b></span>
+        <span class="ln"><b>&#8377;<span id="sum">1,72,530</span></b></span>
       </h1>
       <p class="under" id="heroUnder">Not what you sold. What you kept, after everything that went out.</p>
 
@@ -379,22 +386,26 @@ details .ans{padding:0 24px 22px;font-size:var(--step-body);max-width:52ch}
         <a class="textlink" href="/demo">See the real app</a>
       </div>
 
+      </div>
+
+      <div class="hero-do">
       <div class="chips">
         <div class="chip" data-ui>
-          <label for="c1"><span id="l1">Total sales</span> <b>&#8377;<span id="v1">11,750</span></b></label>
-          <input id="c1" type="range" min="2000" max="60000" step="50" value="11750">
+          <label for="c1"><span id="l1">Sales this month</span> <b>&#8377;<span id="v1">3,52,500</span></b></label>
+          <input id="c1" type="range" min="50000" max="1500000" step="500" value="352500">
         </div>
         <div class="chip" data-ui>
-          <label for="c2"><span id="l2">Ingredients &amp; supplies</span> <b>&#8377;<span id="v2">3,729</span></b></label>
-          <input id="c2" type="range" min="0" max="24000" step="1" value="3729">
+          <label for="c2"><span id="l2">Ingredients &amp; supplies</span> <b>&#8377;<span id="v2">1,11,870</span></b></label>
+          <input id="c2" type="range" min="0" max="600000" step="10" value="111870">
         </div>
         <div class="chip" data-ui>
-          <label for="c3"><span id="l3">Fixed costs, allocated</span> <b>&#8377;<span id="v3">2,270</span></b></label>
-          <input id="c3" type="range" min="0" max="9000" step="10" value="2270">
+          <label for="c3"><span id="l3">Rent, salaries, power</span> <b>&#8377;<span id="v3">68,100</span></b></label>
+          <input id="c3" type="range" min="0" max="300000" step="100" value="68100">
         </div>
       </div>
-      <p class="small" id="chipNote" style="margin-top:20px;max-width:46ch">Those three figures are a real evening on my own
-        counter, and the screen that printed them is further down this page. Move any of them.</p>
+      <p class="small" id="chipNote" style="margin-top:20px;max-width:48ch">That is a real evening at my own counter over
+        thirty days. The app does the same sum every night as well, so you are never finding it out a month late.</p>
+      </div>
     </div>
   </header>
 
@@ -865,10 +876,10 @@ details .ans{padding:0 24px 22px;font-size:var(--step-body);max-width:52ch}
     cafe: {
       word: 'cafe',
       under: 'Not what you sold. What you kept, after everything that went out.',
-      l2: 'Ingredients &amp; supplies', l3: 'Fixed costs, allocated',
-      c1: [2000, 60000, 50, 11750], c2: [0, 24000, 1, 3729], c3: [0, 9000, 10, 2270],
-      note: 'Those three figures are a real evening on my own counter, and the screen that printed '
-          + 'them is further down this page. Move any of them.',
+      l1: 'Sales this month', l2: 'Ingredients &amp; supplies', l3: 'Rent, salaries, power',
+      c1: [50000, 1500000, 500, 352500], c2: [0, 600000, 10, 111870], c3: [0, 300000, 100, 68100],
+      note: 'That is a real evening at my own counter over thirty days. The app does the same sum '
+          + 'every night as well, so you are never finding it out a month late.',
       shots: 'Every picture below is the app itself, photographed off the screen it runs on.',
       ctaHead: 'Show me<br>your menu',
       ctaAfter: 'It goes to my WhatsApp. I reply the same day, usually within an hour, and the first '
@@ -878,10 +889,10 @@ details .ans{padding:0 24px 22px;font-size:var(--step-body);max-width:52ch}
     restaurant: {
       word: 'restaurant',
       under: 'Not what the tables spent. What you kept, after everything that went out.',
-      l2: 'Food &amp; supplies', l3: 'Rent, salaries, power',
-      c1: [5000, 200000, 100, 38400], c2: [0, 90000, 10, 13120], c3: [0, 30000, 50, 7900],
-      note: 'Set these to a normal evening in your place. The app does this sum for you every night, '
-          + 'by itself, from the bills your staff already rang up.',
+      l1: 'Sales this month', l2: 'Food &amp; supplies', l3: 'Rent, salaries, power',
+      c1: [100000, 4000000, 1000, 960000], c2: [0, 1800000, 100, 326400], c3: [0, 800000, 500, 197000],
+      note: 'Set these to a normal month in your place. The app does the sum every night as well, '
+          + 'from the bills your staff already rang up, so the month is never a surprise.',
       shots: 'Every picture below is the app itself, photographed off the screen it runs on.',
       ctaHead: 'Show me<br>your menu',
       ctaAfter: 'It goes to my WhatsApp. I reply the same day, usually within an hour, and the first '
@@ -891,10 +902,10 @@ details .ans{padding:0 24px 22px;font-size:var(--step-body);max-width:52ch}
     furniture: {
       word: 'furniture shop',
       under: 'Not what you sold. What you kept, after the pieces and after the month.',
-      l2: 'What the pieces cost you', l3: 'Rent, salaries, power',
-      c1: [5000, 400000, 500, 86000], c2: [0, 260000, 500, 52000], c3: [0, 40000, 100, 9400],
-      note: 'Set these to a normal day in your shop. One piece can be the whole day, and you still '
-          + 'want to know what is left at the bottom of it.',
+      l1: 'Sales this month', l2: 'What the pieces cost you', l3: 'Rent, salaries, power',
+      c1: [100000, 6000000, 1000, 720000], c2: [0, 4000000, 1000, 446000], c3: [0, 600000, 500, 92000],
+      note: 'Set these to a normal month in your shop. One piece can be a whole week, which is exactly '
+          + 'why the month is the number worth watching.',
       shots: 'Every picture below is the app itself, photographed in the cafe it was built for. The '
           + 'furniture build is these same screens with your pieces in them, and I am finishing it now.',
       ctaHead: 'Show me<br>your shop',
@@ -905,7 +916,8 @@ details .ans{padding:0 24px 22px;font-size:var(--step-body);max-width:52ch}
   };
 
   var trade = 'cafe';
-  var l2 = document.getElementById('l2'), l3 = document.getElementById('l3');
+  var l1 = document.getElementById('l1'), l2 = document.getElementById('l2'),
+      l3 = document.getElementById('l3');
   var heroUnder = document.getElementById('heroUnder'), chipNote = document.getElementById('chipNote');
   var shotsHead = document.getElementById('shotsHead');
   var ctaHead = document.getElementById('ctaHead'), ctaAfter = document.getElementById('ctaAfter');
@@ -924,7 +936,7 @@ details .ans{padding:0 24px 22px;font-size:var(--step-body);max-width:52ch}
     tradeBtns.forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.trade === key)); });
 
     heroUnder.textContent = d.under;
-    l2.innerHTML = d.l2; l3.innerHTML = d.l3;
+    l1.innerHTML = d.l1; l2.innerHTML = d.l2; l3.innerHTML = d.l3;
     range(c1, d.c1); range(c2, d.c2); range(c3, d.c3);
     chipNote.textContent = d.note;
     shotsHead.textContent = d.shots;
