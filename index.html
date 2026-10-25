@@ -1,16 +1,27 @@
 <!doctype html>
-<html lang="en">
+<html lang="en-IN">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Rextro Cafe — what your cafe actually made today</title>
-<meta name="description" content="Billing, stock and the day's real profit for a small cafe, on the phone your staff already has. No machine to buy. First month free, set up in person.">
+<title>Billing software for cafes, restaurants and furniture shops | Rextro AI</title>
+<meta name="description" content="Billing, stock and the month's real profit on the phone your staff already has. No machine to buy, no contract. Rs 499 a month for a cafe or restaurant, first month free, set up in person in India.">
+<link rel="canonical" href="https://rextro-ai-delta.vercel.app/">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="author" content="Aarav Walia">
 <meta property="og:type" content="website">
+<meta property="og:site_name" content="Rextro AI">
+<meta property="og:locale" content="en_IN">
 <meta property="og:url" content="https://rextro-ai-delta.vercel.app/">
-<meta property="og:title" content="Rextro Cafe — what your cafe actually made today">
-<meta property="og:description" content="Your till shows what you sold. This shows what you kept, after ingredients, rent and salaries.">
-<meta property="og:image" content="https://rextro-ai-delta.vercel.app/shots/profit.jpg">
+<meta property="og:title" content="What your shop actually made this month | Rextro AI">
+<meta property="og:description" content="Billing, stock and the evening sum for cafes, restaurants and furniture shops. Your till shows what you sold. This shows what you kept.">
+<meta property="og:image" content="https://rextro-ai-delta.vercel.app/share-card.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="The Profit and Loss screen: total sales, ingredients, fixed costs and the net profit left over">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="What your shop actually made this month | Rextro AI">
+<meta name="twitter:description" content="Billing, stock and the evening sum for cafes, restaurants and furniture shops.">
+<meta name="twitter:image" content="https://rextro-ai-delta.vercel.app/share-card.jpg">
 <meta name="theme-color" content="#f7f9fa">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230d7480'/%3E%3Ctext x='32' y='46' font-family='Arial' font-size='40' font-weight='800' fill='white' text-anchor='middle'%3ER%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,7 +31,7 @@
 :root{
   --bg:#f7f9fa; --surface:#ecf0f2; --ink:#1f3038; --muted:#5d6b72;
   --accent:#0d7480; --accent-ink:#ffffff;
-  --field-a:#e3e9eb; --field-b:#d6dee1; --field-c:#c7d2d6; --field-d:#b6c4c9;
+  --field-a:#f7f9fa; --field-b:#e4eaec; --field-c:#1f3038; --field-d:#0d7480;
   --step-small:0.875rem;
   --step-body:clamp(1.0625rem,1rem + 0.25vw,1.1875rem);
   --step-lead:clamp(1.25rem,1.1rem + 0.7vw,1.625rem);
@@ -32,7 +43,7 @@
 }
 @media (min-width:900px){ :root{ --gutter:56px; } }
 *{box-sizing:border-box}
-html{scroll-behavior:smooth;scrollbar-gutter:stable}
+html{scroll-behavior:smooth}
 body{margin:0;background:var(--bg);color:var(--ink);
   font-family:"Source Serif 4",Georgia,serif;font-size:var(--step-body);line-height:1.55;
   -webkit-font-smoothing:antialiased}
@@ -76,34 +87,65 @@ a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible{o
 
 /* ---- hero: controls on the sentence ---- */
 .hero{padding:clamp(48px,8vh,104px) 0 clamp(56px,9vh,112px);position:relative}
-.hero-inner{position:relative;text-align:center}
-.hero h1{font-size:var(--step-display);line-height:1.0;margin:0 auto;font-feature-settings:'tnum'}
+.hero-inner{position:relative}
+.hero h1{font-size:var(--step-display);line-height:1.0;font-feature-settings:'tnum'}
 .hero h1 b,.hero h1 span{font-family:"Libre Franklin",Helvetica,Arial,sans-serif}
 .hero h1 .ln{display:block;overflow:hidden}
-.hero h1 .ln b{display:block;font-weight:inherit;transform:translateY(105%);
-  animation:riseline .9s var(--ease) forwards}
+/* the start of the move lives in the keyframes, not on the element: if the animation
+   never runs, the headline is simply there rather than hidden behind its own mask */
+.hero h1 .ln b{display:block;font-weight:inherit;animation:riseline .9s var(--ease) both}
 .hero h1 .ln:nth-child(2) b{animation-delay:.11s}
-@keyframes riseline{to{transform:translateY(0)}}
+@keyframes riseline{from{transform:translateY(105%)} to{transform:translateY(0)}}
 #sum{font-variant-numeric:tabular-nums}
-.hero .under{margin:34px auto 0;max-width:40ch;font-size:var(--step-lead);color:var(--ink)}
-.hero .act{margin-top:30px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
-.chips{display:grid;gap:12px;margin:40px auto 0;max-width:760px}
+.hero .under{margin:32px 0 0;max-width:38ch;font-size:var(--step-lead);color:var(--ink)}
+.hero .act{margin-top:32px;display:flex;gap:22px;align-items:center;flex-wrap:wrap}
+.chips{display:grid;gap:12px;margin:46px 0 0}
 @media (min-width:900px){
   .hero-inner{padding-bottom:12px}
-  .chips{grid-template-columns:repeat(3,1fr);gap:16px;max-width:980px}
+  .chips{grid-template-columns:repeat(3,1fr);gap:16px}
+}
+@media (min-width:1100px){
+  .hero-inner{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);
+    gap:clamp(40px,5vw,80px);align-items:center}
+  .chips{grid-template-columns:1fr;gap:12px;margin:0}
+  .hero-do .small{margin-top:16px !important;max-width:38ch}
 }
 
 /* a real control from the product; data-ui keeps its own conventions */
 .chip{background:var(--surface);border:1px solid #cfd8db;border-radius:6px;padding:12px 16px 14px;text-align:left;
-  transition:transform .16s var(--ease)}
-.chip:hover,.chip:focus-within{transform:translateY(-3px)}
+  transition:border-color .16s var(--ease)}
+.chip:hover,.chip:focus-within{border-color:var(--accent)}
 .chip label{display:flex;justify-content:space-between;align-items:baseline;gap:10px;
   font-family:"Libre Franklin",sans-serif;font-weight:700;font-size:.8125rem;letter-spacing:0;color:var(--muted)}
 .chip label b{font-size:var(--step-body);color:var(--ink);font-variant-numeric:tabular-nums}
 .chip input[type=range]{width:100%;margin:10px 0 0;accent-color:var(--accent);height:22px}
-@media (min-width:900px){
-  .chip{transform:rotate(-2deg)} .chip:nth-child(2){transform:rotate(1.5deg)} .chip:nth-child(3){transform:rotate(-1deg)}
+/* the trade control: one page, three kinds of shop */
+.trades{display:flex;flex-wrap:wrap;gap:1px;background:#cfd8db;margin:30px 0 0;
+  border:1px solid #cfd8db;border-radius:6px;overflow:hidden;width:fit-content;max-width:100%} /* taste-skill-ignore: a control, not a card */
+.trades button{font-family:"Libre Franklin",sans-serif;font-weight:700;font-size:var(--ui);
+  background:var(--bg);color:var(--muted);border:0;padding:13px 20px;
+  cursor:pointer;transition:background-color .15s var(--ease),color .15s var(--ease)}
+.trades button:hover{background:var(--surface);color:var(--ink)}
+/* on a phone the three sit in one row of equal thirds, rather than wrapping and
+   leaving the container's own colour showing through the gap */
+@media (max-width:700px){
+  .trades{width:100%;display:grid;grid-template-columns:repeat(3,1fr);align-items:stretch}
+  .trades button{padding:12px 6px;font-size:13px;line-height:1.25}
 }
+.trades button[aria-pressed=true]{background:var(--accent);color:#fff}
+.trade-note{margin-top:12px;font-size:var(--step-small);color:var(--muted)}
+.trade-note a{color:var(--accent);text-underline-offset:3px}
+[hidden]{display:none !important}
+
+/* furniture: what is true today, and what is not yet */
+.two-up{display:grid;gap:44px;margin-top:52px}
+@media (min-width:900px){ .two-up{grid-template-columns:1fr 1fr;gap:80px} }
+.colhead{font-size:var(--step-lead);letter-spacing:-.025em;margin-bottom:24px}
+.plain{list-style:none;margin:0;padding:0;display:grid;gap:18px}
+.plain li{font-size:var(--step-body);line-height:1.5;padding-left:28px;position:relative;max-width:42ch}
+.plain li::before{content:'';position:absolute;left:0;top:.66em;width:14px;height:2px;background:var(--accent)}
+.col.later .plain li::before{background:#b6c4c9}
+.quote-block{max-width:30ch}
 
 /* ---- sections ---- */
 section{padding:clamp(80px,13vh,150px) 0}
@@ -114,9 +156,8 @@ section{padding:clamp(80px,13vh,150px) 0}
 .fields{display:grid;grid-template-columns:1fr}
 .field{padding:40px var(--gutter) 44px;display:flex;flex-direction:column;min-height:62svh}
 .field:nth-child(1){background:var(--field-a)} .field:nth-child(2){background:var(--field-b)}
-.field:nth-child(3){background:var(--field-c)} .field:nth-child(4){background:var(--field-d)}
-.field .card{margin:clamp(20px,7%,56px) 0 0;transition:transform .15s var(--ease)}
-.field:hover .card{transform:translateY(-6px)}
+.field:nth-child(3){background:var(--field-c);color:#fff} .field:nth-child(4){background:var(--field-d);color:#fff}
+.field .card{margin:clamp(20px,7%,56px) 0 0}
 .field .clause{font-size:clamp(1.375rem,2vw,2rem);font-family:"Libre Franklin",sans-serif;font-weight:700;
   letter-spacing:-.03em;line-height:1.06;margin-top:auto;padding-top:32px;max-width:15ch}
 .fieldhead{font-size:clamp(1.5rem,2.2vw,2.125rem);letter-spacing:-.035em;line-height:1.04;max-width:13ch}
@@ -136,7 +177,7 @@ section{padding:clamp(80px,13vh,150px) 0}
 [data-ui]{font-family:"Libre Franklin",Helvetica,Arial,sans-serif;color:#13232b}
 .ocard{width:100%;max-width:280px;background:#fff;border:1px solid #d3dbde;border-radius:6px;padding:14px 16px 16px;font-size:var(--ui)}
 .ocard .top{display:flex;align-items:center;gap:8px;margin-bottom:8px}
-.ocard .tbl{background:#f0b429;color:#2a2102;font-weight:700;border-radius:4px;padding:2px 8px;font-size:12px}
+.ocard .tbl{background:#f0b429;color:#2a2102;font-weight:700;border-radius:4px;padding:2px 8px;font-size:13px}
 .ocard .when{color:#4a5a62;font-size:13px;margin-left:auto}
 .ocard .line{display:flex;justify-content:space-between;padding:3px 0;font-weight:600}
 .ocard .tot{display:flex;justify-content:space-between;margin-top:10px;padding-top:9px;border-top:1px solid #e2e8ea;font-weight:700;font-size:15px} /* taste-skill-ignore: inside data-ui */
@@ -170,9 +211,7 @@ section{padding:clamp(80px,13vh,150px) 0}
 
 .screens{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:38px}
 .shot{margin:0}
-.shot img{width:100%;height:auto;border-radius:var(--radius);background:var(--surface);
-  transition:transform .3s var(--ease)}
-.shot:hover img{transform:scale(1.015)}
+.shot img{width:100%;height:auto;border-radius:var(--radius);background:var(--surface)}
 .shot figcaption{margin-top:10px;font-size:var(--step-small);color:var(--muted);max-width:40ch}
 @media (min-width:700px){ .screens{grid-template-columns:repeat(3,1fr)} }
 @media (min-width:1000px){ .screens{grid-template-columns:repeat(5,1fr);gap:18px} }
@@ -180,9 +219,7 @@ section{padding:clamp(80px,13vh,150px) 0}
 .film video{width:100%;max-width:300px;height:auto;border-radius:var(--radius);background:var(--surface);display:block}
 @media (min-width:900px){ .film{grid-template-columns:auto 1fr;gap:56px} .film video{max-width:340px} }
 .band{margin:0;padding:0}
-.band img{width:100%;height:clamp(300px,52svh,620px);object-fit:cover;
-  transition:transform 1.1s var(--ease)}
-.band:hover img{transform:scale(1.02)}
+.band img{width:100%;height:clamp(300px,52svh,620px);object-fit:cover}
 .band figcaption{max-width:1320px;margin:14px auto 0;padding:0 var(--gutter);font-size:var(--step-small);color:var(--muted)}
 
 /* about: founder's letter */
@@ -192,10 +229,9 @@ section{padding:clamp(80px,13vh,150px) 0}
 .letter p{margin-top:22px;font-size:var(--step-body);line-height:1.6}
 .letter .mark-it{background:#cfe6e8;padding:0 4px}
 .letter .sign{margin-top:30px;font-style:italic;font-size:var(--step-lead)}
-.letter .role{font-size:var(--step-small);color:var(--muted);font-style:normal;margin-top:4px}
+.letter .role{display:block;font-size:var(--step-small);color:var(--muted);font-style:normal;margin-top:6px}
 .letter-pic{margin-top:54px}
-.letter-pic img{width:100%;height:auto;border-radius:var(--radius);transition:transform .4s var(--ease)}
-.letter-pic:hover img{transform:scale(1.012)}
+.letter-pic img{width:100%;height:auto;border-radius:var(--radius)}
 .letter-pic figcaption{margin-top:10px;font-size:var(--step-small);color:var(--muted)}
 
 /* features: staggered fragment cells */
@@ -219,15 +255,14 @@ section{padding:clamp(80px,13vh,150px) 0}
   border-bottom:0;border-right:0;padding:14px 16px;font-size:var(--ui)}
 .cell.flip .fragbox{border-top-left-radius:0;border-top-right-radius:6px;border-left:0;border-right:1px solid #d3dbde} /* taste-skill-ignore: inside data-ui */
 .fragbox .row{display:flex;justify-content:space-between;gap:12px;padding:5px 0;font-weight:600}
-.fragbox .row span.d{color:#b3261e}
 .fragbox .row span.u{color:#0d7480}
 .fragbox .hd{font-size:13px;color:#4a5a62;font-weight:700;margin-bottom:8px}
-.pins{display:flex;gap:8px;flex-wrap:wrap}
-.pin{border:1px solid #d3dbde;border-radius:4px;padding:8px 11px;font-size:var(--ui);font-weight:700;background:#fff}
-.pin.on{background:#0d7480;color:#fff;border-color:#0d7480}
+.fragshot{width:100%;height:auto;display:block;border-top-left-radius:6px}
+.cell.flip .fragshot{border-top-left-radius:0;border-top-right-radius:6px}
+.cell:nth-child(6) .fragshot{max-width:300px;border-radius:6px}
 .stamps{display:flex;gap:6px;flex-wrap:wrap}
 .stamps i{width:26px;height:26px;border-radius:50%;display:grid;place-items:center;font-style:normal;
-  font-size:12px;font-weight:700;border:2px solid #c6d1d4;color:#9aa8ad}
+  font-size:13px;font-weight:700;border:2px solid #c6d1d4;color:#9aa8ad}
 .stamps i.f{background:#0d7480;border-color:#0d7480;color:#fff}
 .stamps i.f::after{content:'';width:9px;height:9px;border-radius:50%;background:#fff}
 .qrmini{width:118px;height:118px;display:block;margin:0 auto}
@@ -239,11 +274,8 @@ section{padding:clamp(80px,13vh,150px) 0}
 .figure .cur{font-size:.5em;vertical-align:.52em;letter-spacing:-.02em}
 .figure .per{font-size:.12em;letter-spacing:-.01em;margin-left:.08em;position:relative;z-index:4}
 .incl{margin-top:26px;display:grid;gap:10px;font-size:var(--step-body)}
-.overlap{position:absolute;right:-6px;top:-86px;width:min(180px,30vw);transform:rotate(-3deg);z-index:0;pointer-events:none}
-.overlap img{width:100%;border-radius:var(--radius);border:1px solid #cfd8db}
 @media (min-width:1000px){
   .price-grid{grid-template-columns:4fr 8fr;gap:72px}
-  .overlap{right:1%;top:-132px;width:230px}
 }
 
 /* faq */
@@ -310,7 +342,6 @@ details .ans{padding:0 24px 22px;font-size:var(--step-body);max-width:52ch}
   html{scroll-behavior:auto}
   .rise,.rise.in{opacity:1;transform:none;transition:none}
   .hero h1 .ln b{transform:none;animation:none}
-  .field:hover .card{transform:none}
 }
 </style>
 </head>
@@ -318,14 +349,15 @@ details .ans{padding:0 24px 22px;font-size:var(--step-body);max-width:52ch}
 
 <nav class="nav">
   <div class="wrap">
-    <a class="mark" href="#top"><span>R</span>Rextro Cafe</a>
+    <a class="mark" href="#top"><span>R</span>Rextro AI</a>
     <div class="navlinks">
       <a href="#how">How it works</a>
       <a href="#screens">The screens</a>
+      <a href="#furniture">Furniture</a>
       <a href="#price">Price</a>
       <a href="#questions">Questions</a>
     </div>
-    <a class="btn" href="https://wa.me/918988159401?text=Hi%2C%20I%20run%20a%20cafe%20and%20I%20saw%20Rextro%20Cafe.">Message me</a>
+    <a class="btn" id="navWa" href="https://wa.me/918988159401?text=Hi%20Aarav.%20I%20run%20a%20cafe%20and%20I%20saw%20Rextro%20AI.">Message me</a>
   </div>
 </nav>
 
@@ -334,31 +366,46 @@ details .ans{padding:0 24px 22px;font-size:var(--step-body);max-width:52ch}
   <!-- HERO — controls on the sentence -->
   <header class="hero">
     <div class="wrap hero-inner">
+      <div class="hero-say">
       <h1>
-        <span class="ln"><b>Today you made</b></span>
-        <span class="ln"><b>&#8377;<span id="sum">8,067</span></b></span>
+        <span class="ln"><b>This month</b></span>
+        <span class="ln"><b>&#8377;<span id="sum">1,72,530</span></b></span>
       </h1>
-      <p class="under rise">Not what you sold. What you kept, after everything that went out.</p>
-      <div class="act rise">
-        <a class="btn" href="https://wa.me/918988159401?text=Hi%2C%20I%20run%20a%20cafe%20and%20I%20saw%20Rextro%20Cafe.">Message me on WhatsApp</a>
+      <p class="under" id="heroUnder">Not what you sold. What you kept, after everything that went out.</p>
+
+      <div class="trades" role="group" aria-label="What kind of shop you run">
+        <button type="button" data-trade="cafe" aria-pressed="true">Cafe</button>
+        <button type="button" data-trade="restaurant" aria-pressed="false">Restaurant</button>
+        <button type="button" data-trade="furniture" aria-pressed="false">Furniture shop</button>
+      </div>
+      <p class="trade-note">Something else, a bakery or a salon or a hardware shop?
+        <a href="#furniture">Tell me your trade and I will quote it.</a></p>
+
+      <div class="act">
+        <a class="btn" id="heroWa" href="https://wa.me/918988159401?text=Hi%20Aarav.%20I%20run%20a%20cafe%20and%20I%20saw%20Rextro%20AI.">Message me on WhatsApp</a>
         <a class="textlink" href="/demo">See the real app</a>
       </div>
 
-      <div class="chips rise">
+      </div>
+
+      <div class="hero-do">
+      <div class="chips">
         <div class="chip" data-ui>
-          <label for="c1">Today&rsquo;s sales <b>&#8377;<span id="v1">15,150</span></b></label>
-          <input id="c1" type="range" min="2000" max="60000" step="250" value="15150">
+          <label for="c1"><span id="l1">Sales this month</span> <b>&#8377;<span id="v1">3,52,500</span></b></label>
+          <input id="c1" type="range" min="50000" max="1500000" step="500" value="352500">
         </div>
         <div class="chip" data-ui>
-          <label for="c2">Ingredients <b><span id="v2">32</span>%</b></label>
-          <input id="c2" type="range" min="18" max="55" step="1" value="32">
+          <label for="c2"><span id="l2">Ingredients &amp; supplies</span> <b>&#8377;<span id="v2">1,11,870</span></b></label>
+          <input id="c2" type="range" min="0" max="600000" step="10" value="111870">
         </div>
         <div class="chip" data-ui>
-          <label for="c3">Rent &amp; salaries, a day <b>&#8377;<span id="v3">2,270</span></b></label>
-          <input id="c3" type="range" min="500" max="9000" step="50" value="2270">
+          <label for="c3"><span id="l3">Rent, salaries, power</span> <b>&#8377;<span id="v3">68,100</span></b></label>
+          <input id="c3" type="range" min="0" max="300000" step="100" value="68100">
         </div>
       </div>
-      <p class="small" style="margin-top:18px">Move them. That is the sum the app does for you every evening.</p>
+      <p class="small" id="chipNote" style="margin-top:20px;max-width:48ch">That is a real evening at my own counter over
+        thirty days. The app does the same sum every night as well, so you are never finding it out a month late.</p>
+      </div>
     </div>
   </header>
 
@@ -366,7 +413,7 @@ details .ans{padding:0 24px 22px;font-size:var(--step-body);max-width:52ch}
   <section id="how" style="padding:0">
     <div class="fields">
       <div class="field rise">
-        <h2 class="fieldhead rise">A sale, all the way through</h2>
+        <h2 class="fieldhead">A sale, all the way through</h2>
         <div class="card">
           <div class="ocard" data-ui>
             <div class="top"><span class="tbl">Table 4</span><span class="when">just now</span></div>
@@ -376,7 +423,7 @@ details .ans{padding:0 24px 22px;font-size:var(--step-body);max-width:52ch}
             <span class="state new">Waiting</span>
           </div>
         </div>
-        <p class="clause rise">First it lands.</p>
+        <p class="clause">First it lands.</p>
       </div>
       <div class="field rise">
         <div class="card">
@@ -388,7 +435,7 @@ details .ans{padding:0 24px 22px;font-size:var(--step-body);max-width:52ch}
             <span class="state ok">Running</span>
           </div>
         </div>
-        <p class="clause rise">Then your staff take it.</p>
+        <p class="clause">Then your staff take it.</p>
       </div>
       <div class="field rise">
         <div class="card">
@@ -400,7 +447,7 @@ details .ans{padding:0 24px 22px;font-size:var(--step-body);max-width:52ch}
             <div class="stock">Nobody counted anything. <b>Milk left: 4.2 L</b></div>
           </div>
         </div>
-        <p class="clause rise">Then the stock moves itself.</p>
+        <p class="clause">Then the stock moves itself.</p>
       </div>
       <div class="field rise">
         <div class="card">
@@ -412,7 +459,7 @@ details .ans{padding:0 24px 22px;font-size:var(--step-body);max-width:52ch}
             <div class="tot"><span>Kept</span><span class="profit">&#8377;171</span></div>
           </div>
         </div>
-        <p class="clause rise">Then it is counted.</p>
+        <p class="clause">Then it is counted.</p>
       </div>
     </div>
   </section>
@@ -466,7 +513,7 @@ details .ans{padding:0 24px 22px;font-size:var(--step-body);max-width:52ch}
     </div>
 
     <div class="wrap" style="margin-top:clamp(64px,9vh,120px)">
-      <h3 class="sec-head rise" style="font-size:var(--step-lead);max-width:30ch">
+      <h3 class="sec-head rise" id="shotsHead" style="font-size:var(--step-lead);max-width:34ch">
         Every picture below is the app itself, photographed off the screen it runs on.</h3>
       <div class="screens rise">
         <figure class="shot">
@@ -546,10 +593,8 @@ details .ans{padding:0 24px 22px;font-size:var(--step-body);max-width:52ch}
               nothing else &mdash; no accounts, no margins.</p>
           </div>
           <div class="frag">
-            <div class="fragbox" data-ui>
-              <p class="hd">WHO IS ON THIS PHONE</p>
-              <div class="pins"><span class="pin on">Staff</span><span class="pin">Co-owner</span><span class="pin">Owner</span></div>
-            </div>
+<img class="fragshot" src="/shots/frag-roles.jpg" width="480" height="372" loading="lazy"
+                 decoding="async" alt="The staff phone: a billing tab, a purchases tab, and nothing else">
           </div>
         </div>
 
@@ -560,11 +605,8 @@ details .ans{padding:0 24px 22px;font-size:var(--step-body);max-width:52ch}
               refuses &mdash; not just the button.</p>
           </div>
           <div class="frag">
-            <div class="fragbox" data-ui>
-              <p class="hd">TODAY&rsquo;S ORDERS</p>
-              <div class="row"><span>Order 3 &middot; paid</span><span class="d">no delete</span></div>
-              <div class="row"><span>Order 4 &middot; running</span><span class="u">can edit</span></div>
-            </div>
+<img class="fragshot" src="/shots/frag-orders.jpg" width="480" height="395" loading="lazy"
+                 decoding="async" alt="Two settled orders. Cash can be swapped to UPI; neither can be removed">
           </div>
         </div>
 
@@ -582,7 +624,7 @@ details .ans{padding:0 24px 22px;font-size:var(--step-body);max-width:52ch}
           </div>
         </div>
 
-        <div class="cell flip up rise">
+        <div class="cell flip up rise" data-hide-for="furniture">
           <div class="txt">
             <h3>Customers order from the table</h3>
             <p>They scan the card, pick from your menu on their own phone, and the till chimes.
@@ -619,11 +661,8 @@ details .ans{padding:0 24px 22px;font-size:var(--step-body);max-width:52ch}
               accounts until you say yes.</p>
           </div>
           <div class="frag">
-            <div class="fragbox" data-ui>
-              <p class="hd">STAFF PURCHASES</p>
-              <div class="row"><span>Milk, 10 L &middot; Ravi</span><span>&#8377;620</span></div>
-              <div class="row"><span>waiting for you</span><span class="u">Approve</span></div>
-            </div>
+<img class="fragshot" src="/shots/frag-approve.jpg" width="340" height="365" loading="lazy"
+                 decoding="async" alt="The approval: stock for the shop, a shop expense, or just approve">
           </div>
         </div>
       </div>
@@ -631,18 +670,77 @@ details .ans{padding:0 24px 22px;font-size:var(--step-body);max-width:52ch}
   </section>
 
   <!-- PRICING -->
+
+  <figure class="band rise">
+    <img src="/world/furniture-shop.jpg" width="1920" height="845" loading="lazy" decoding="async"
+         alt="The floor of a furniture showroom: sofas, a sideboard, display cabinets and a dining set">
+    <figcaption>A shop where one piece can be the whole day. The question at the end of it is the same one.</figcaption>
+  </figure>
+
+  <section id="furniture">
+    <div class="wrap">
+      <h2 class="sec-head rise">A furniture shop is the same sum</h2>
+      <p class="body sec-sub rise" style="max-width:54ch">One sofa can be a day&rsquo;s takings, and at the
+        end of the day you still want the one number: what did the shop keep? Most of this page already
+        works for a shop that sells pieces instead of plates. Here is exactly how much of it, and exactly
+        what I am still changing.</p>
+
+      <div class="two-up">
+        <div class="col rise">
+          <h3 class="colhead">Works today, unchanged</h3>
+          <ul class="plain">
+            <li>Your staff bill from their own phones with their own PIN, and see nothing else:
+              not your margins, not your accounts.</li>
+            <li>A catalogue of pieces, each with its selling price, what it cost you, and a photo
+              so staff pick it by sight instead of hunting a code.</li>
+            <li>The payment code on the screen already has the amount in it, so nobody keys
+              &#8377;42,000 as &#8377;4,200.</li>
+            <li>A boy buys polish, fittings or a load of transport at the market, photographs the
+              bill, and it waits for you to approve before it touches your accounts.</li>
+            <li>The evening and the month: sold, less what the pieces cost you, less rent and
+              salaries. The figure at the bottom is what you kept.</li>
+            <li>Customers&rsquo; numbers and their visits, so the family that bought a bed hears from
+              you when they furnish the next room.</li>
+            <li>Your data out as a file whenever you ask, whether you stay or go.</li>
+          </ul>
+        </div>
+
+        <div class="col later rise">
+          <h3 class="colhead">What I am changing now</h3>
+          <ul class="plain">
+            <li><b>The words.</b> It says menu and Point of Sale today, because the first shop that
+              ran it was a cafe. It will say catalogue and counter.</li>
+            <li><b>Counting pieces, not kilos.</b> The stock screen is built for milk and flour. A
+              furniture shop needs to know it has three of that sofa left and one still coming.</li>
+            <li><b>The table card comes off.</b> Nobody orders a wardrobe from a QR code on a table,
+              and you should not pay for a screen you will never open.</li>
+          </ul>
+          <p class="body" style="margin-top:28px;max-width:40ch">It is a few weeks of work, and I
+            would rather do it with a real shop open in front of me than guess at it. If that is your
+            shop, you get it set up in person, you get a say in what it does, and you get a price that
+            reflects going first.</p>
+          <p style="margin-top:26px">
+            <a class="btn" href="https://wa.me/918988159401?text=Hi%20Aarav.%20I%20run%20a%20furniture%20shop%20and%20I%20saw%20Rextro%20AI.%20Can%20you%20tell%20me%20what%20it%20would%20cost%3F">Talk to me about your shop</a>
+          </p>
+        </div>
+      </div>
+
+      <p class="body rise" style="margin-top:56px;max-width:58ch">Another trade altogether? A bakery,
+        a salon, a hardware shop, a medical store. The sum underneath does not care what you sell:
+        takings, less what the goods cost you, less what the month costs you anyway. Tell me what you
+        run and I will tell you honestly whether it fits and what it would cost.</p>
+    </div>
+  </section>
+
   <section id="price" style="background:var(--surface)">
     <div class="wrap price-grid">
       <div class="rise">
         <h2 class="sec-head" style="font-size:var(--step-lead)">What it costs</h2>
-        <p class="body sec-sub">One price, one shop, every screen on this page. No machine, no
+        <p class="body sec-sub" id="priceSub">One price, one shop, every screen on this page. No machine, no
           installation, no contract. Stop whenever you like and I export your data for you.</p>
       </div>
-      <div class="rise">
+      <div class="rise" id="priceCafe">
         <p class="figure"><span class="cur">&#8377;</span>499<span class="per">a month</span>
-          <span class="overlap" aria-hidden="true">
-            <img src="/shots/profit.jpg" width="900" height="560" loading="lazy" decoding="async" alt="">
-          </span>
         </p>
         <div class="incl">
           <span>First month free, nothing to pay up front</span>
@@ -652,6 +750,18 @@ details .ans{padding:0 24px 22px;font-size:var(--step-body);max-width:52ch}
         </div>
         <p style="margin-top:30px">
           <a class="btn" href="https://wa.me/918988159401?text=Hi%2C%20I%20run%20a%20cafe.%20I%27d%20like%20the%20free%20first%20month.">Start the free month</a>
+        </p>
+      </div>
+      <div class="rise" id="priceQuote" hidden>
+        <p class="figure quote-block" style="font-size:clamp(2.75rem,7vw,6rem);line-height:.95">Tell me<br>about it</p>
+        <div class="incl">
+          <span>The furniture build is new, so the price is a conversation, not a page</span>
+          <span>I come and set it up, and your catalogue goes in before I arrive</span>
+          <span>Going first should cost you less, not more, and it does</span>
+          <span>Same as everyone else: no contract, stop whenever you like</span>
+        </div>
+        <p style="margin-top:30px">
+          <a class="btn" href="https://wa.me/918988159401?text=Hi%20Aarav.%20I%20run%20a%20furniture%20shop%20and%20I%20saw%20Rextro%20AI.%20Can%20you%20tell%20me%20what%20it%20would%20cost%3F">Ask me what it would cost</a>
         </p>
       </div>
     </div>
@@ -680,6 +790,10 @@ details .ans{padding:0 24px 22px;font-size:var(--step-body);max-width:52ch}
         <details name="faq"><summary>Does it do GST?<span class="pm"></span></summary>
           <p class="ans">Not yet, and I would rather say so than find out together. If you need GST
             invoices today, this is not the right thing for you this month.</p></details>
+        <details name="faq"><summary>Does it work for a furniture shop?<span class="pm"></span></summary>
+          <p class="ans">The billing, the staff PINs, the purchase approvals, the payment code and the
+            profit sum already do. I am changing the words, the way stock counts pieces instead of kilos,
+            and dropping the table card. Ask me and I will tell you honestly where it stands.</p></details>
         <details name="faq"><summary>What happens if I stop paying?<span class="pm"></span></summary>
           <p class="ans">Nothing dramatic. The month you have paid for finishes, I export your data and
             send it, and that is that. No lock-in, no notice period.</p></details>
@@ -691,14 +805,14 @@ details .ans{padding:0 24px 22px;font-size:var(--step-body);max-width:52ch}
   <section class="cta">
     <div class="wrap">
       <div>
-        <h2>Show me<br>your menu</h2>
-        <p class="after">It goes to my WhatsApp. I reply the same day, usually within an hour, and the
+        <h2 id="ctaHead">Show me<br>your menu</h2>
+        <p class="after" id="ctaAfter">It goes to my WhatsApp. I reply the same day, usually within an hour, and the
           first thing I will ask for is a photo of your menu.</p>
       </div>
       <div></div>
       <form class="compose" id="compose" data-ui>
         <p class="t">Message Aarav</p>
-        <label class="hd small" for="cafeName" style="display:block;margin-bottom:6px">Your cafe</label>
+        <label class="hd small" for="cafeName" id="shopLabel" style="display:block;margin-bottom:6px">Your cafe</label>
         <input id="cafeName" type="text" value="Suket Cafe" autocomplete="organization">
         <label class="hd small" for="cafeWhere" style="display:block;margin-bottom:6px">Where</label>
         <input id="cafeWhere" type="text" value="Sundar Nagar" autocomplete="address-level2">
@@ -714,9 +828,10 @@ details .ans{padding:0 24px 22px;font-size:var(--step-body);max-width:52ch}
 
 <footer class="foot">
   <div class="wrap">
-    <span>Billing software for small cafes</span>
+    <span>Billing software for small shops in India</span>
     <span class="links">
       <a href="#how">How it works</a>
+      <a href="#furniture">Furniture shops</a>
       <a href="#price">Price</a>
       <a href="/demo">The app</a>
       <a href="https://wa.me/918988159401">WhatsApp</a>
@@ -728,7 +843,7 @@ details .ans{padding:0 24px 22px;font-size:var(--step-body);max-width:52ch}
       Photographs of the trade, not of this product:
       &ldquo;Kolkata 40, Indian Coffee House &mdash; interior&rdquo; by juggadery, CC BY 2.0, via Wikimedia Commons.
       &ldquo;Coffee preparation in a modern cafe&rdquo; by Shixart1985, CC BY 2.0, via Wikimedia Commons.
-      &ldquo;Coffee Shop Cafeteria Restaurant Service Concept&rdquo; by tapecode, public domain, via Flickr.
+      &ldquo;Coffee Shop Cafeteria Restaurant Service Concept&rdquo; by tapecode, public domain, via Flickr. &ldquo;Living Mall Level 9 Furniture shop 201911&rdquo; by Wpcpey, CC BY 4.0, via Wikimedia Commons.
     </p>
   </div>
 </footer>
@@ -742,14 +857,122 @@ details .ans{padding:0 24px 22px;font-size:var(--step-body);max-width:52ch}
 
   // the sum the app does every evening: sales, less what went into the food, less the day's share of rent and wages
   function recalc() {
-    var sales = +c1.value, pct = +c2.value, fixed = +c3.value;
-    v1.textContent = inr(sales); v2.textContent = pct; v3.textContent = inr(fixed);
-    var kept = sales - (sales * pct / 100) - fixed;
+    var sales = +c1.value, food = +c2.value, fixed = +c3.value;
+    v1.textContent = inr(sales); v2.textContent = inr(food); v3.textContent = inr(fixed);
+    var kept = sales - food - fixed;
     sum.textContent = inr(kept);
     sum.parentElement.style.color = kept < 0 ? '#b3261e' : '';
   }
   [c1, c2, c3].forEach(function (el) { el.addEventListener('input', recalc); });
   recalc();
+
+
+  /* ----------------------------------------------------------------------------
+     Three trades, one page. The page is the cafe page with no script at all; the
+     control below swaps the words, the ranges and the price to the shop you run,
+     and puts the choice in the address bar so a link can arrive already set.
+  ---------------------------------------------------------------------------- */
+  var TRADES = {
+    cafe: {
+      word: 'cafe',
+      under: 'Not what you sold. What you kept, after everything that went out.',
+      l1: 'Sales this month', l2: 'Ingredients &amp; supplies', l3: 'Rent, salaries, power',
+      c1: [50000, 1500000, 500, 352500], c2: [0, 600000, 10, 111870], c3: [0, 300000, 100, 68100],
+      note: 'That is a real evening at my own counter over thirty days. The app does the same sum '
+          + 'every night as well, so you are never finding it out a month late.',
+      shots: 'Every picture below is the app itself, photographed off the screen it runs on.',
+      ctaHead: 'Show me<br>your menu',
+      ctaAfter: 'It goes to my WhatsApp. I reply the same day, usually within an hour, and the first '
+          + 'thing I will ask for is a photo of your menu.',
+      label: 'Your cafe', example: 'Suket Cafe', quote: false
+    },
+    restaurant: {
+      word: 'restaurant',
+      under: 'Not what the tables spent. What you kept, after everything that went out.',
+      l1: 'Sales this month', l2: 'Food &amp; supplies', l3: 'Rent, salaries, power',
+      c1: [100000, 4000000, 1000, 960000], c2: [0, 1800000, 100, 326400], c3: [0, 800000, 500, 197000],
+      note: 'Set these to a normal month in your place. The app does the sum every night as well, '
+          + 'from the bills your staff already rang up, so the month is never a surprise.',
+      shots: 'Every picture below is the app itself, photographed off the screen it runs on.',
+      ctaHead: 'Show me<br>your menu',
+      ctaAfter: 'It goes to my WhatsApp. I reply the same day, usually within an hour, and the first '
+          + 'thing I will ask for is a photo of your menu.',
+      label: 'Your restaurant', example: 'Suket Restaurant', quote: false
+    },
+    furniture: {
+      word: 'furniture shop',
+      under: 'Not what you sold. What you kept, after the pieces and after the month.',
+      l1: 'Sales this month', l2: 'What the pieces cost you', l3: 'Rent, salaries, power',
+      c1: [100000, 6000000, 1000, 720000], c2: [0, 4000000, 1000, 446000], c3: [0, 600000, 500, 92000],
+      note: 'Set these to a normal month in your shop. One piece can be a whole week, which is exactly '
+          + 'why the month is the number worth watching.',
+      shots: 'Every picture below is the app itself, photographed in the cafe it was built for. The '
+          + 'furniture build is these same screens with your pieces in them, and I am finishing it now.',
+      ctaHead: 'Show me<br>your shop',
+      ctaAfter: 'It goes to my WhatsApp. I reply the same day, usually within an hour, and the first '
+          + 'thing I will ask for is a photo of your shop and what a few pieces sell for.',
+      label: 'Your shop', example: 'Suket Furniture', quote: true
+    }
+  };
+
+  var trade = 'cafe';
+  var l1 = document.getElementById('l1'), l2 = document.getElementById('l2'),
+      l3 = document.getElementById('l3');
+  var heroUnder = document.getElementById('heroUnder'), chipNote = document.getElementById('chipNote');
+  var shotsHead = document.getElementById('shotsHead');
+  var ctaHead = document.getElementById('ctaHead'), ctaAfter = document.getElementById('ctaAfter');
+  var shopLabel = document.getElementById('shopLabel'), shopName = document.getElementById('cafeName');
+  var priceCafe = document.getElementById('priceCafe'), priceQuote = document.getElementById('priceQuote');
+  var priceSub = document.getElementById('priceSub');
+  var tradeBtns = document.querySelectorAll('.trades button');
+
+  function range(el, spec) {
+    el.min = spec[0]; el.max = spec[1]; el.step = spec[2]; el.value = spec[3];
+  }
+
+  function setTrade(key, push) {
+    var d = TRADES[key]; if (!d) return;
+    trade = key;
+    tradeBtns.forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.trade === key)); });
+
+    heroUnder.textContent = d.under;
+    l1.innerHTML = d.l1; l2.innerHTML = d.l2; l3.innerHTML = d.l3;
+    range(c1, d.c1); range(c2, d.c2); range(c3, d.c3);
+    chipNote.textContent = d.note;
+    shotsHead.textContent = d.shots;
+    ctaHead.innerHTML = d.ctaHead;
+    ctaAfter.textContent = d.ctaAfter;
+    shopLabel.textContent = d.label;
+    shopName.value = d.example;
+    recalc();
+
+    // the table card is the one screen a furniture shop will never open
+    document.querySelectorAll('[data-hide-for]').forEach(function (el) {
+      el.hidden = el.dataset.hideFor.split(' ').indexOf(key) > -1;
+    });
+    priceCafe.hidden = d.quote; priceQuote.hidden = !d.quote;
+    priceSub.textContent = d.quote
+      ? 'The cafe price is on the page because the cafe build is finished. Yours is not yet, so I '
+        + 'would rather talk about it than print a number I might have to take back.'
+      : 'One price, one shop, every screen on this page. No machine, no installation, no contract. '
+        + 'Stop whenever you like and I export your data for you.';
+
+    var msg = 'Hi Aarav. I run a ' + d.word + ' and I saw Rextro AI.';
+    ['navWa', 'heroWa'].forEach(function (id) {
+      var a = document.getElementById(id);
+      if (a) a.href = 'https://wa.me/918988159401?text=' + encodeURIComponent(msg);
+    });
+
+    if (push && window.history && history.replaceState) {
+      history.replaceState(null, '', key === 'cafe' ? location.pathname : '?trade=' + key);
+    }
+  }
+
+  tradeBtns.forEach(function (b) {
+    b.addEventListener('click', function () { setTrade(b.dataset.trade, true); });
+  });
+  var asked = (location.search.match(/[?&]trade=([a-z]+)/) || [])[1];
+  if (asked && TRADES[asked] && asked !== 'cafe') setTrade(asked, false);
 
   // the middle row of the showcase really works
   var accept = document.getElementById('acceptBtn');
@@ -776,7 +999,8 @@ details .ans{padding:0 24px 22px;font-size:var(--step-body);max-width:52ch}
       e.preventDefault();
       var name = document.getElementById('cafeName').value.trim() || 'my cafe';
       var where = document.getElementById('cafeWhere').value.trim();
-      var msg = 'Hi Aarav. I run ' + name + (where ? ' in ' + where : '') + '. '
+      var msg = 'Hi Aarav. I run ' + name + ' (' + TRADES[trade].word + ')'
+        + (where ? ' in ' + where : '') + '. '
         + (want === 'website' ? 'I would like a website for it.' : 'I would like to try the billing software.');
       window.open('https://wa.me/918988159401?text=' + encodeURIComponent(msg), '_blank', 'noopener');
     });
@@ -795,6 +1019,121 @@ details .ans{padding:0 24px 22px;font-size:var(--step-body);max-width:52ch}
   }, { rootMargin: '0px 0px -12% 0px', threshold: .08 });
   document.querySelectorAll('.rise').forEach(function (el) { seen.observe(el); });
 })();
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://rextro-ai-delta.vercel.app/#org",
+      "name": "Rextro AI",
+      "url": "https://rextro-ai-delta.vercel.app/",
+      "logo": "https://rextro-ai-delta.vercel.app/share-card.jpg",
+      "founder": { "@type": "Person", "name": "Aarav Walia" },
+      "areaServed": { "@type": "Country", "name": "India" },
+      "contactPoint": [{
+        "@type": "ContactPoint",
+        "contactType": "sales",
+        "url": "https://wa.me/918988159401",
+        "availableLanguage": ["en", "hi"]
+      }]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://rextro-ai-delta.vercel.app/#site",
+      "url": "https://rextro-ai-delta.vercel.app/",
+      "name": "Rextro AI",
+      "inLanguage": "en-IN",
+      "publisher": { "@id": "https://rextro-ai-delta.vercel.app/#org" }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://rextro-ai-delta.vercel.app/#app",
+      "name": "Rextro AI",
+      "url": "https://rextro-ai-delta.vercel.app/",
+      "applicationCategory": "BusinessApplication",
+      "applicationSubCategory": "Point of sale, billing and inventory",
+      "operatingSystem": "Web browser, Android",
+      "inLanguage": "en-IN",
+      "publisher": { "@id": "https://rextro-ai-delta.vercel.app/#org" },
+      "audience": {
+        "@type": "BusinessAudience",
+        "name": "Small cafes, restaurants and furniture shops in India"
+      },
+      "featureList": [
+        "Billing from a staff phone, with a PIN for each person",
+        "Stock that comes down on the sale instead of being counted",
+        "A UPI payment code with the exact amount already in it",
+        "Staff purchases photographed at the market and approved by the owner",
+        "Profit and loss: sales, less what the goods cost, less fixed costs",
+        "Customers order from the table by scanning a card",
+        "Offers and a stamp card the customer can see"
+      ],
+      "offers": {
+        "@type": "Offer",
+        "price": "499",
+        "priceCurrency": "INR",
+        "availability": "https://schema.org/InStock",
+        "url": "https://rextro-ai-delta.vercel.app/#price",
+        "description": "Per shop, per month, for a cafe or a restaurant. First month free. Furniture shops and other trades are quoted individually.",
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "price": "499",
+          "priceCurrency": "INR",
+          "referenceQuantity": { "@type": "QuantitativeValue", "value": 1, "unitCode": "MON" }
+        }
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://rextro-ai-delta.vercel.app/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Do I need to buy a machine?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No. It runs in the browser on any Android phone or tablet the shop already has. If your staff can use WhatsApp, they can use this." }
+        },
+        {
+          "@type": "Question",
+          "name": "Will I have to type my whole menu in?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No, I do it. Send me a photo of your menu and it is in before I arrive. That is the part everyone dreads and it is not your job." }
+        },
+        {
+          "@type": "Question",
+          "name": "Can my staff see what I earn?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No. Staff log in with their own PIN and get the billing screen. The accounts, the margins and the profit screen are not on their phone at all." }
+        },
+        {
+          "@type": "Question",
+          "name": "What if the internet goes?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Billing keeps working on the phone and the sales go up when the signal comes back. In a long outage, take the money and bill it when you are back - nothing is lost." }
+        },
+        {
+          "@type": "Question",
+          "name": "Is my data mine?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. Ask any time and I send you everything - sales, stock, customers - as a file you can open in Excel. That holds whether you stay or leave." }
+        },
+        {
+          "@type": "Question",
+          "name": "Does it do GST?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Not yet, and I would rather say so than find out together. If you need GST invoices today, this is not the right thing for you this month." }
+        },
+        {
+          "@type": "Question",
+          "name": "What happens if I stop paying?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Nothing dramatic. The month you have paid for finishes, I export your data and send it, and that is that. No lock-in, no notice period." }
+        },
+        {
+          "@type": "Question",
+          "name": "Does it work for a furniture shop?",
+          "acceptedAnswer": { "@type": "Answer", "text": "The billing, the staff PINs, the purchase approvals, the payment code and the profit sum already do. I am changing the words, the way stock counts pieces instead of kilos, and dropping the table card. Ask me and I will tell you honestly where it stands." }
+        }
+      ]
+    }
+  ]
+}
 </script>
 </body>
 </html>
